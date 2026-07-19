@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#e94545">
+    <meta name="description" content="ぽふりんと学ぶ、ITパスポート用語の4択クイズ">
+    <title>ぽふりんのITパスポート4択クイズ</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">本文へ移動</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <button class="brand" id="home-button" type="button" aria-label="ホームへ戻る">
+          <span class="brand-apple" aria-hidden="true">🍎</span>
+          <span><strong>ぽふりん</strong>のITパスポートクイズ</span>
+        </button>
+        <button class="header-button" id="history-button" type="button">苦手問題・履歴</button>
+      </div>
+    </header>
+
+    <main id="main-content" class="app-shell">
+      <section id="home-view" class="view" aria-labelledby="home-title">
+        <div class="hero panel">
+          <div>
+            <p class="eyebrow">すきま時間に、用語をひとくち</p>
+            <h1 id="home-title">説明から答える<br><span>ITパスポート4択クイズ</span></h1>
+            <p>英語の略語も日本語の専門用語も、短い解説つきで反復できます。</p>
+          </div>
+          <div class="mascot" aria-label="応援役のぽふりん">
+            <span aria-hidden="true">🍎</span>
+            <strong>ぽふりん</strong>
+            <small>今日も一緒に<br>ひとつずつなのだ！</small>
+          </div>
+        </div>
+
+        <section class="panel" aria-labelledby="mode-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">LEARNING MODE</p>
+              <h2 id="mode-title">学習モードを選ぶ</h2>
+            </div>
+            <p id="question-count-label" class="count-pill"></p>
+          </div>
+          <div class="mode-grid">
+            <button class="mode-card primary-mode" type="button" data-mode="all">
+              <span class="mode-icon" aria-hidden="true">📚</span>
+              <strong>全問題</strong>
+              <small>すべての用語をシャッフル</small>
+            </button>
+            <button class="mode-card" type="button" data-mode="random10">
+              <span class="mode-icon" aria-hidden="true">🍏</span>
+              <strong>ランダム10問</strong>
+              <small>短時間でさくっと学習</small>
+            </button>
+            <button class="mode-card" type="button" data-mode="random20">
+              <span class="mode-icon" aria-hidden="true">📝</span>
+              <strong>ランダム20問</strong>
+              <small>しっかり一セット</small>
+            </button>
+            <button class="mode-card" type="button" data-mode="weak">
+              <span class="mode-icon" aria-hidden="true">🔁</span>
+              <strong>苦手問題のみ</strong>
+              <small id="weak-mode-count">保存済み 0問</small>
+            </button>
+          </div>
+
+          <div class="category-box">
+            <label for="category-select"><strong>カテゴリー別</strong><small>テーマを絞って学習</small></label>
+            <div class="category-controls">
+              <select id="category-select" aria-label="カテゴリーを選択"></select>
+              <button id="category-start-button" class="button button-secondary" type="button">このカテゴリーで開始</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel home-summary" aria-labelledby="summary-title">
+          <div>
+            <p class="eyebrow">YOUR RECORD</p>
+            <h2 id="summary-title">これまでの学習</h2>
+          </div>
+          <div class="summary-stats" id="lifetime-stats"></div>
+        </section>
+      </section>
+
+      <section id="quiz-view" class="view" aria-labelledby="quiz-heading" hidden>
+        <div class="quiz-topbar">
+          <button id="quit-button" class="text-button" type="button">← モード選択へ</button>
+          <p id="mode-label" class="count-pill"></p>
+        </div>
+
+        <div class="stats-grid" aria-label="現在の成績">
+          <div class="stat-card"><span>正解数</span><strong id="correct-stat">0</strong></div>
+          <div class="stat-card"><span>出題数</span><strong id="answered-stat">0</strong></div>
+          <div class="stat-card"><span>正答率</span><strong id="rate-stat">--%</strong></div>
+          <div class="stat-card"><span>連続正解</span><strong id="streak-stat">0</strong></div>
+        </div>
+
+        <article class="question-card panel">
+          <div class="question-meta">
+            <span id="question-number">第1問</span>
+            <span id="category-label" class="category-tag"></span>
+          </div>
+          <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+          <p class="question-kicker">この説明に当てはまる用語は？</p>
+          <h1 id="quiz-heading" class="question-text" tabindex="-1"></h1>
+          <div id="choices" class="choices" aria-label="選択肢"></div>
+          <button id="unknown-button" class="button unknown-button" type="button">？ わからない</button>
+
+          <div id="feedback" class="feedback" role="status" aria-live="polite" hidden>
+            <div class="feedback-title-row">
+              <strong id="feedback-title"></strong>
+              <span id="mascot-message"></span>
+            </div>
+            <p id="correct-answer-line" class="correct-answer-line"></p>
+            <p id="explanation"></p>
+            <button id="next-button" class="button button-primary" type="button">次の問題へ →</button>
+          </div>
+        </article>
+        <p class="keyboard-hint">キーボードの <kbd>1</kbd>〜<kbd>4</kbd> でも回答できます</p>
+      </section>
+
+      <section id="result-view" class="view" aria-labelledby="result-title" hidden>
+        <div class="result-card panel">
+          <div class="result-apple" aria-hidden="true">🍎</div>
+          <p class="eyebrow">SESSION COMPLETE</p>
+          <h1 id="result-title">学習おつかれさま！</h1>
+          <p id="result-message">今日の積み重ねが力になるのだ！</p>
+          <div id="result-stats" class="result-stats"></div>
+          <div class="result-actions">
+            <button id="retry-button" class="button button-primary" type="button">同じモードでもう一度</button>
+            <button id="result-home-button" class="button button-secondary" type="button">モード選択へ</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="history-view" class="view" aria-labelledby="history-title" hidden>
+        <div class="history-header">
+          <div>
+            <p class="eyebrow">REVIEW LIST</p>
+            <h1 id="history-title">苦手問題・学習履歴</h1>
+            <p>間違えた問題と「わからない」を押した問題を、ここで確認できます。</p>
+          </div>
+          <button id="history-home-button" class="button button-secondary" type="button">モード選択へ</button>
+        </div>
+
+        <div class="panel history-panel">
+          <div class="history-toolbar">
+            <h2>苦手問題 <span id="weak-list-count" class="count-pill">0問</span></h2>
+            <button id="reset-history-button" class="danger-button" type="button">全履歴をリセット</button>
+          </div>
+          <div id="weak-list" class="weak-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>🍎 ぽふりんと、焦らずこつこつ。学習記録はこの端末内だけに保存されます。</p>
+    </footer>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
