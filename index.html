@@ -29,7 +29,7 @@
             <p>英語の略語も日本語の専門用語も、短い解説つきで反復できます。</p>
           </div>
           <div class="mascot" aria-label="応援役のぽふりん">
-            <span aria-hidden="true">🍎</span>
+            <img src="assets/pofurin-study.png" alt="丸眼鏡で勉強を応援するぽふりん" width="176" height="176" decoding="async">
             <strong>ぽふりん</strong>
             <small>今日も一緒に<br>ひとつずつなのだ！</small>
           </div>
@@ -43,6 +43,26 @@
             </div>
             <p id="question-count-label" class="count-pill"></p>
           </div>
+
+          <fieldset class="range-selector">
+            <legend>出題範囲を選ぶ</legend>
+            <div class="range-options">
+              <label class="range-option">
+                <input type="radio" name="question-range" value="legacy">
+                <span><strong>これまでの問題</strong><small id="legacy-range-count"></small></span>
+              </label>
+              <label class="range-option">
+                <input type="radio" name="question-range" value="current">
+                <span><strong>今回追加した問題</strong><small id="current-range-count"></small></span>
+              </label>
+              <label class="range-option">
+                <input type="radio" name="question-range" value="all" checked>
+                <span><strong>すべての問題</strong><small id="all-range-count"></small></span>
+              </label>
+            </div>
+            <p id="range-summary" class="range-summary" aria-live="polite"></p>
+          </fieldset>
+
           <div class="mode-grid">
             <button class="mode-card primary-mode" type="button" data-mode="all">
               <span class="mode-icon" aria-hidden="true">📚</span>
@@ -110,8 +130,11 @@
 
           <div id="feedback" class="feedback" role="status" aria-live="polite" hidden>
             <div class="feedback-title-row">
-              <strong id="feedback-title"></strong>
-              <span id="mascot-message"></span>
+              <img id="feedback-mascot" class="feedback-mascot" src="assets/pofurin-thinking.png" alt="やさしく考えるぽふりん" width="104" height="104" loading="lazy" decoding="async">
+              <div class="feedback-copy">
+                <strong id="feedback-title"></strong>
+                <span id="mascot-message"></span>
+              </div>
             </div>
             <p id="correct-answer-line" class="correct-answer-line"></p>
             <p id="explanation"></p>
@@ -123,7 +146,7 @@
 
       <section id="result-view" class="view" aria-labelledby="result-title" hidden>
         <div class="result-card panel">
-          <div class="result-apple" aria-hidden="true">🍎</div>
+          <img class="result-mascot" src="assets/pofurin-celebrate.png" alt="両手を上げて喜ぶぽふりん" width="148" height="148" loading="lazy" decoding="async">
           <p class="eyebrow">SESSION COMPLETE</p>
           <h1 id="result-title">学習おつかれさま！</h1>
           <p id="result-message">今日の積み重ねが力になるのだ！</p>

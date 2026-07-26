@@ -3,11 +3,42 @@
 
   const QUESTIONS = Array.isArray(globalThis.QUIZ_QUESTIONS) ? globalThis.QUIZ_QUESTIONS : [];
   const STORAGE_KEY = "pofurin-it-passport-history-v1";
+  const CURRENT_BATCH_ID = "addition-2026-07-26";
   const POSITIVE_MESSAGES = [
     "その調子なのだ！",
     "ひとつ身についたのだ！",
     "いい答えなのだ！",
-    "こつこつ最強なのだ！"
+    "こつこつ最強なのだ！",
+    "せいかいなのだ！さすがぴこちゃなのだ！",
+    "ぶぃぶぃっ☆ また一つ強くなったのだ！",
+    "ぽふぽふ応援が効いたのだー！",
+    "その知識、しっかり持ち帰るのだ！",
+    "一問ぶん、未来のぴこちゃを助けたのだ！",
+    "焦らず、油断せず！でも今のは完璧なのだ！",
+    "ぴこちゃ、冴えているのだー！",
+    "大正解！葉っぱ二枚が喜んでいるのだ！",
+    "てとてと進めば、合格へ着くのだ！",
+    "その調子なのだ！ぽふりんも鼻が高いのだ！",
+    "知識を一個捕まえたのだー！",
+    "すごいのだ！ブラックサンダー級のひらめきなのだ！",
+    "ぴこちゃの正解、最高レアなのだ！",
+    "やったのだ！合格へまた一歩なのだ！",
+    "ぽふりん先生、花丸をあげるのだ！",
+    "この問題はもう怖くないのだ！",
+    "正解を積み上げれば、いつか山になるのだ！",
+    "今の一問、ぶぃぶぃだったのだ☆",
+    "ぴこちゃ、ちゃんと理解しているのだ！",
+    "むふー！これは見事な正解なのだ！",
+    "かわいいぽふりんと賢いぴこちゃ、最強なのだ！",
+    "今日の努力が、未来で光るのだ！",
+    "苦手問題を一匹やっつけたのだー！",
+    "経験は持ち帰る！正解も持ち帰るのだ！",
+    "ぴこちゃならできると思っていたのだ！",
+    "正解祝いのおやつを所望するのだ！",
+    "ぽふりん、うれしくて転がってしまうのだー！",
+    "葉っぱをぱたぱたして祝うのだ！",
+    "よく見抜いたのだ！おみごとなのだ！",
+    "正解だから、よいのだー！"
   ];
   const MODE_LABELS = {
     all: "全問題",
@@ -15,6 +46,11 @@
     random20: "ランダム20問",
     weak: "苦手問題のみ",
     category: "カテゴリー別"
+  };
+  const RANGE_LABELS = {
+    legacy: "これまでの問題",
+    current: "今回追加した問題",
+    all: "すべての問題"
   };
 
   const elements = {
@@ -26,6 +62,11 @@
     resultView: document.querySelector("#result-view"),
     historyView: document.querySelector("#history-view"),
     modeButtons: [...document.querySelectorAll("[data-mode]")],
+    rangeInputs: [...document.querySelectorAll("[name='question-range']")],
+    rangeSummary: document.querySelector("#range-summary"),
+    legacyRangeCount: document.querySelector("#legacy-range-count"),
+    currentRangeCount: document.querySelector("#current-range-count"),
+    allRangeCount: document.querySelector("#all-range-count"),
     questionCountLabel: document.querySelector("#question-count-label"),
     weakModeCount: document.querySelector("#weak-mode-count"),
     categorySelect: document.querySelector("#category-select"),
@@ -45,6 +86,7 @@
     unknownButton: document.querySelector("#unknown-button"),
     feedback: document.querySelector("#feedback"),
     feedbackTitle: document.querySelector("#feedback-title"),
+    feedbackMascot: document.querySelector("#feedback-mascot"),
     mascotMessage: document.querySelector("#mascot-message"),
     correctAnswerLine: document.querySelector("#correct-answer-line"),
     explanation: document.querySelector("#explanation"),
@@ -61,7 +103,8 @@
 
   let learningHistory = loadHistory();
   let session = null;
-  let lastModeConfig = { mode: "random10", category: null };
+  let selectedRange = elements.rangeInputs.find((input) => input.checked)?.value || "all";
+  let lastModeConfig = { mode: "random10", category: null, range: selectedRange };
 
   function loadHistory() {
     try {
@@ -106,8 +149,15 @@
     showView(elements.homeView);
   }
 
-  function getWeakQuestions() {
-    return QUESTIONS.filter((question) => learningHistory.questions[question.id]?.weak);
+  function getRangePool(range = selectedRange) {
+    if (range === "legacy") return QUESTIONS.filter((question) => !question.batchId);
+    if (range === "current") return QUESTIONS.filter((question) => question.batchId === CURRENT_BATCH_ID);
+    return [...QUESTIONS];
+  }
+
+  function getWeakQuestions(range = null) {
+    const pool = range ? getRangePool(range) : QUESTIONS;
+    return pool.filter((question) => learningHistory.questions[question.id]?.weak);
   }
 
   function updateHomeSummary() {
@@ -117,24 +167,35 @@
     const answered = correct + incorrect;
     const rate = answered ? Math.round((correct / answered) * 100) : 0;
     const weakCount = getWeakQuestions().length;
+    const rangePool = getRangePool();
+    const rangeWeakCount = getWeakQuestions(selectedRange).length;
 
-    elements.questionCountLabel.textContent = `${QUESTIONS.length}問を収録`;
-    elements.weakModeCount.textContent = `保存済み ${weakCount}問`;
+    elements.questionCountLabel.textContent = `${rangePool.length}問が対象`;
+    elements.weakModeCount.textContent = `この範囲に ${rangeWeakCount}問`;
     elements.lifetimeStats.innerHTML = `
       <span>回答 <strong>${answered}</strong>回</span>
       <span>正答率 <strong>${answered ? `${rate}%` : "--%"}</strong></span>
       <span>苦手 <strong>${weakCount}</strong>問</span>
     `;
+
+    const legacyCount = getRangePool("legacy").length;
+    const currentCount = getRangePool("current").length;
+    elements.legacyRangeCount.textContent = `${legacyCount}問`;
+    elements.currentRangeCount.textContent = `${currentCount}問`;
+    elements.allRangeCount.textContent = `${QUESTIONS.length}問`;
+    elements.rangeSummary.textContent = `選択中：${RANGE_LABELS[selectedRange]}（${rangePool.length}問）`;
   }
 
   function setupCategories() {
-    const categories = [...new Set(QUESTIONS.map((question) => question.category))];
+    const pool = getRangePool();
+    const categories = [...new Set(pool.map((question) => question.category))];
     elements.categorySelect.innerHTML = categories
       .map((category) => {
-        const count = QUESTIONS.filter((question) => question.category === category).length;
+        const count = pool.filter((question) => question.category === category).length;
         return `<option value="${escapeHtml(category)}">${escapeHtml(category)}（${count}問）</option>`;
       })
       .join("");
+    elements.categoryStartButton.disabled = categories.length === 0;
   }
 
   function escapeHtml(value) {
@@ -146,20 +207,21 @@
       .replaceAll("'", "&#039;");
   }
 
-  function selectQuestions(mode, category) {
-    const shuffled = shuffle(QUESTIONS);
+  function selectQuestions(mode, category, range = selectedRange) {
+    const rangePool = getRangePool(range);
+    const shuffled = shuffle(rangePool);
     if (mode === "all") return shuffled;
     if (mode === "random10") return shuffled.slice(0, Math.min(10, shuffled.length));
     if (mode === "random20") return shuffled.slice(0, Math.min(20, shuffled.length));
-    if (mode === "weak") return shuffle(getWeakQuestions());
+    if (mode === "weak") return shuffle(getWeakQuestions(range));
     if (mode === "category") {
-      return shuffle(QUESTIONS.filter((question) => question.category === category));
+      return shuffle(rangePool.filter((question) => question.category === category));
     }
     return [];
   }
 
-  function startQuiz(mode, category = null) {
-    const selected = selectQuestions(mode, category);
+  function startQuiz(mode, category = null, range = selectedRange) {
+    const selected = selectQuestions(mode, category, range);
     if (!selected.length) {
       window.alert(mode === "weak"
         ? "苦手問題はまだありません。間違えた問題や「わからない」を選んだ問題がここに追加されます。"
@@ -167,11 +229,14 @@
       return;
     }
 
-    lastModeConfig = { mode, category };
+    lastModeConfig = { mode, category, range };
     session = {
       mode,
       category,
+      range,
+      rangePoolIds: getRangePool(range).map((question) => question.id),
       basePoolIds: selected.map((question) => question.id),
+      seenIds: new Set(),
       queue: selected.map((question) => ({ id: question.id, retry: false, bridge: false })),
       initialTotal: selected.length,
       current: null,
@@ -186,7 +251,7 @@
     };
 
     const suffix = mode === "category" ? `：${category}` : "";
-    elements.modeLabel.textContent = `${MODE_LABELS[mode]}${suffix}`;
+    elements.modeLabel.textContent = `${RANGE_LABELS[range]}｜${MODE_LABELS[mode]}${suffix}`;
     showView(elements.quizView);
     updateSessionStats();
     showNextQuestion();
@@ -210,6 +275,7 @@
     }
 
     session.current = { ...next, question };
+    session.seenIds.add(question.id);
     session.shuffledChoices = shuffle(question.choices);
     session.locked = false;
     session.displayed += 1;
@@ -276,13 +342,33 @@
     const alreadyScheduled = session.queue.some((entry) => entry.id === questionId && entry.retry);
     if (alreadyScheduled) return;
 
-    const bridgeCandidates = QUESTIONS.filter((question) => question.id !== questionId);
+    const queuedIds = new Set(session.queue.map((entry) => entry.id));
+    const bridgeCandidates = session.rangePoolIds
+      .map(findQuestion)
+      .filter((question) => question
+        && question.id !== questionId
+        && !session.seenIds.has(question.id)
+        && !queuedIds.has(question.id));
+    const fallbackCandidates = session.rangePoolIds
+      .map(findQuestion)
+      .filter((question) => question && question.id !== questionId);
     let previousId = session.queue.at(-1)?.id || questionId;
-    while (session.queue.length < 5 && bridgeCandidates.length) {
-      const candidates = bridgeCandidates.filter((question) => question.id !== previousId);
-      const pool = candidates.length ? candidates : bridgeCandidates;
+    while (session.queue.length < 5 && fallbackCandidates.length) {
+      const preferred = bridgeCandidates.filter((question) => question.id !== previousId);
+      const unqueuedFallback = fallbackCandidates.filter((question) => question.id !== previousId
+        && !session.queue.some((entry) => entry.id === question.id));
+      const nonRepeatingFallback = fallbackCandidates.filter((question) => question.id !== previousId);
+      const pool = preferred.length
+        ? preferred
+        : unqueuedFallback.length
+          ? unqueuedFallback
+          : nonRepeatingFallback.length
+            ? nonRepeatingFallback
+            : fallbackCandidates;
       const bridge = pool[Math.floor(Math.random() * pool.length)];
       session.queue.push({ id: bridge.id, retry: false, bridge: true });
+      const preferredIndex = bridgeCandidates.indexOf(bridge);
+      if (preferredIndex >= 0) bridgeCandidates.splice(preferredIndex, 1);
       previousId = bridge.id;
     }
 
@@ -330,14 +416,20 @@
       elements.feedback.classList.add("correct");
       elements.feedbackTitle.textContent = "✓ 正解！";
       elements.mascotMessage.textContent = POSITIVE_MESSAGES[Math.floor(Math.random() * POSITIVE_MESSAGES.length)];
+      elements.feedbackMascot.src = "assets/pofurin-celebrate.png";
+      elements.feedbackMascot.alt = "両手を上げて喜ぶぽふりん";
     } else if (type === "unknown") {
       elements.feedback.classList.add("unknown");
       elements.feedbackTitle.textContent = "？ ここで覚えよう";
       elements.mascotMessage.textContent = "あとで復習するのだ！";
+      elements.feedbackMascot.src = "assets/pofurin-study.png";
+      elements.feedbackMascot.alt = "一緒に勉強するぽふりん";
     } else {
       elements.feedback.classList.add("incorrect");
       elements.feedbackTitle.textContent = "✕ おしい！";
       elements.mascotMessage.textContent = "あとで復習するのだ！";
+      elements.feedbackMascot.src = "assets/pofurin-thinking.png";
+      elements.feedbackMascot.alt = "やさしく考えるぽふりん";
     }
 
     elements.correctAnswerLine.textContent = `正解：${question.answer}`;
@@ -451,6 +543,13 @@
   elements.modeButtons.forEach((button) => {
     button.addEventListener("click", () => startQuiz(button.dataset.mode));
   });
+  elements.rangeInputs.forEach((input) => {
+    input.addEventListener("change", () => {
+      selectedRange = input.value;
+      setupCategories();
+      updateHomeSummary();
+    });
+  });
   elements.categoryStartButton.addEventListener("click", () => startQuiz("category", elements.categorySelect.value));
   elements.unknownButton.addEventListener("click", () => answerQuestion("unknown"));
   elements.nextButton.addEventListener("click", showNextQuestion);
@@ -459,7 +558,7 @@
   elements.resultHomeButton.addEventListener("click", goHome);
   elements.historyHomeButton.addEventListener("click", goHome);
   elements.historyButton.addEventListener("click", showHistoryView);
-  elements.retryButton.addEventListener("click", () => startQuiz(lastModeConfig.mode, lastModeConfig.category));
+  elements.retryButton.addEventListener("click", () => startQuiz(lastModeConfig.mode, lastModeConfig.category, lastModeConfig.range));
   elements.resetHistoryButton.addEventListener("click", resetAllHistory);
   elements.weakList.addEventListener("click", (event) => {
     const button = event.target.closest(".remove-weak-button");

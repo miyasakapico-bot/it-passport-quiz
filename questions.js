@@ -874,5 +874,554 @@ globalThis.QUIZ_QUESTIONS = [
     answer: "SLCP",
     choices: ["SLCP", "SLA", "SDLC", "WBS"],
     explanation: "SLCPはSoftware Life Cycle Process（ソフトウェアライフサイクルプロセス）の略。ソフトウェアの取得・供給・開発・運用・保守などの作業を体系化する。"
+  },
+  {
+    id: "add-20260726-bcm",
+    batchId: "addition-2026-07-26",
+    category: "事業継続・設備管理",
+    question: "災害や事故に備え、事業継続計画の策定・訓練・見直しを継続的に行う管理活動はどれか。",
+    answer: "BCM",
+    choices: ["BCM", "BCP", "SLA", "SLM"],
+    explanation: "BCMはBusiness Continuity Management（事業継続管理）の略。計画を作るだけでなく、訓練や改善まで継続して行う。"
+  },
+  {
+    id: "add-20260726-bcp",
+    batchId: "addition-2026-07-26",
+    category: "事業継続・設備管理",
+    question: "災害や事故が起きても重要業務を続け、停止した場合は早期に復旧するための具体的な計画はどれか。",
+    answer: "BCP",
+    choices: ["BCP", "BCM", "SLA", "WBS"],
+    explanation: "BCPはBusiness Continuity Plan（事業継続計画）の略。緊急時に継続・復旧する業務、手順、体制などを定める。"
+  },
+  {
+    id: "add-20260726-facility-management",
+    batchId: "addition-2026-07-26",
+    category: "事業継続・設備管理",
+    question: "安全性、コスト、快適性、機密性などを考慮し、建物や設備とその利用環境を総合的に管理する考え方はどれか。",
+    answer: "ファシリティマネジメント",
+    choices: ["ファシリティマネジメント", "サービスマネジメント", "プロジェクトマネジメント", "サプライチェーンマネジメント"],
+    explanation: "ファシリティマネジメントは、施設・設備と環境を経営資源として総合的に企画、管理、活用する考え方。安全、費用、快適さ、情報保護なども考える。"
+  },
+  {
+    id: "add-20260726-ups",
+    batchId: "addition-2026-07-26",
+    category: "事業継続・設備管理",
+    question: "停電した直後にバッテリーから電力を供給し、機器の安全な終了や発電設備への切替時間を確保する装置はどれか。",
+    answer: "UPS",
+    choices: ["UPS", "自家発電装置", "NAS", "RAID"],
+    explanation: "UPSはUninterruptible Power Supply（無停電電源装置）の略。停電や瞬断のとき、一定時間電力を供給する。"
+  },
+  {
+    id: "add-20260726-emergency-generator",
+    batchId: "addition-2026-07-26",
+    category: "事業継続・設備管理",
+    question: "停電が長引く場合に、エンジンなどを動力として発電し、設備へ比較的長時間電力を供給するものはどれか。",
+    answer: "自家発電装置",
+    choices: ["自家発電装置", "UPS", "フリーアクセスフロア", "サージ保護装置"],
+    explanation: "自家発電装置は燃料などを使って電力を作る設備。起動までの短い時間をUPSで補う構成もある。"
+  },
+  {
+    id: "add-20260726-free-access-floor",
+    batchId: "addition-2026-07-26",
+    category: "事業継続・設備管理",
+    question: "床を取り外せるパネルでかさ上げし、床下の空間へ電源線や通信ケーブルを配線できるようにした床はどれか。",
+    answer: "フリーアクセスフロア",
+    choices: ["フリーアクセスフロア", "耐震床", "二重天井", "防音床"],
+    explanation: "フリーアクセスフロアは、床下に配線用の空間を設ける床。機器配置や配線変更に対応しやすい。"
+  },
+  {
+    id: "add-20260726-system-audit-controls",
+    batchId: "addition-2026-07-26",
+    category: "ガバナンス・統制・監査",
+    question: "情報システムに関する統制が適切かを、独立した立場の専門家が客観的に点検・評価し、改善を助言する活動はどれか。",
+    answer: "システム監査",
+    choices: ["システム監査", "IT統制", "内部統制", "ITガバナンス"],
+    explanation: "システム監査は、独立した立場から情報システムのリスクへの対応を点検・評価し、必要に応じて改善を助言する。IT統制は監査される仕組みそのもの。"
+  },
+  {
+    id: "add-20260726-corporate-governance-oversight",
+    batchId: "addition-2026-07-26",
+    category: "ガバナンス・統制・監査",
+    question: "経営の公正性・透明性を高め、株主などに説明責任を果たせるように、経営を監督する仕組みはどれか。",
+    answer: "コーポレートガバナンス",
+    choices: ["コーポレートガバナンス", "ITガバナンス", "内部統制", "職務分掌"],
+    explanation: "コーポレートガバナンスは企業統治のこと。取締役会などによって経営を監督し、公正で透明な経営を目指す。ITガバナンスはそのうちIT活用に焦点を当てる。"
+  },
+  {
+    id: "add-20260726-internal-control",
+    batchId: "addition-2026-07-26",
+    category: "ガバナンス・統制・監査",
+    question: "業務の有効性・効率性、報告の信頼性、法令順守、資産の保全などを達成するため、組織内に整備・運用する仕組みはどれか。",
+    answer: "内部統制",
+    choices: ["内部統制", "IT統制", "システム監査", "コーポレートガバナンス"],
+    explanation: "内部統制は、組織の目的を適切に達成するため、業務に組み込んで運用するルールや手続の総体。IT統制もその一部になる。"
+  },
+  {
+    id: "add-20260726-it-governance",
+    batchId: "addition-2026-07-26",
+    category: "ガバナンス・統制・監査",
+    question: "経営戦略に沿って情報技術への投資や活用方針を決め、その成果とリスクを組織として監督する仕組みはどれか。",
+    answer: "ITガバナンス",
+    choices: ["ITガバナンス", "IT統制", "内部統制", "システム監査"],
+    explanation: "ITガバナンスは、ITを経営目標に役立てるため、意思決定、責任、評価の仕組みを整えること。IT統制は方針を実現する具体的な管理策。"
+  },
+  {
+    id: "add-20260726-it-control",
+    batchId: "addition-2026-07-26",
+    category: "ガバナンス・統制・監査",
+    question: "アクセス権の管理、変更手順、バックアップなど、情報技術に関する処理の正確性や安全性を確保する具体的な管理策はどれか。",
+    answer: "IT統制",
+    choices: ["IT統制", "ITガバナンス", "システム監査", "職務分掌"],
+    explanation: "IT統制は、情報システムを適切に管理・運用するための具体的な仕組み。組織全体の内部統制をITの面から支える。"
+  },
+  {
+    id: "add-20260726-segregation-of-duties",
+    batchId: "addition-2026-07-26",
+    category: "ガバナンス・統制・監査",
+    question: "取引の承認、実行、記録などを一人に集中させず、複数の担当者へ分けて不正や誤りを防ぐ考え方はどれか。",
+    answer: "職務分掌",
+    choices: ["職務分掌", "権限委譲", "ジョブローテーション", "内部監査"],
+    explanation: "職務分掌は、相互に確認できるよう責任や作業を分ける内部統制の方法。一人だけで取引を完結できないようにする。"
+  },
+  {
+    id: "add-20260726-stack",
+    batchId: "addition-2026-07-26",
+    category: "アルゴリズム・データ構造",
+    question: "最後に格納したデータを最初に取り出す、後入れ先出しのデータ構造はどれか。",
+    answer: "スタック",
+    choices: ["スタック", "キュー", "配列", "リスト"],
+    explanation: "スタックはLIFO（Last In, First Out）のデータ構造。積み重ねた皿のように、最後に入れたものから取り出す。"
+  },
+  {
+    id: "add-20260726-queue",
+    batchId: "addition-2026-07-26",
+    category: "アルゴリズム・データ構造",
+    question: "最初に格納したデータを最初に取り出す、先入れ先出しのデータ構造はどれか。",
+    answer: "キュー",
+    choices: ["キュー", "スタック", "配列", "木構造"],
+    explanation: "キューはFIFO（First In, First Out）のデータ構造。待ち行列のように、先に入ったものから処理する。"
+  },
+  {
+    id: "add-20260726-algorithm",
+    batchId: "addition-2026-07-26",
+    category: "アルゴリズム・データ構造",
+    question: "問題を解くための計算や処理の手順を、有限回で終わるよう明確に表したものはどれか。",
+    answer: "アルゴリズム",
+    choices: ["アルゴリズム", "プログラム言語", "ソースコード", "データベース"],
+    explanation: "アルゴリズムは、入力から目的の結果を得るための明確な処理手順。プログラムは、その手順を言語で実装したもの。"
+  },
+  {
+    id: "add-20260726-html",
+    batchId: "addition-2026-07-26",
+    category: "Web・データ記述",
+    question: "見出し、段落、リンクなど、Webページの文書構造や意味をタグで記述する言語はどれか。",
+    answer: "HTML",
+    choices: ["HTML", "CSS", "XML", "SQL"],
+    explanation: "HTMLはHyperText Markup Languageの略。Webページの構造や意味を記述する。見た目の指定には主にCSSを使う。"
+  },
+  {
+    id: "add-20260726-xml",
+    batchId: "addition-2026-07-26",
+    category: "Web・データ記述",
+    question: "利用目的に合わせて独自のタグを定義でき、データの意味や構造を交換しやすい形で記述する言語はどれか。",
+    answer: "XML",
+    choices: ["XML", "HTML", "CSS", "JavaScript"],
+    explanation: "XMLはExtensible Markup Language（拡張可能なマーク付け言語）の略。独自タグを使って構造化データを表現できる。"
+  },
+  {
+    id: "add-20260726-css",
+    batchId: "addition-2026-07-26",
+    category: "Web・データ記述",
+    question: "Webページの文字色、余白、配置など、表示上のデザインを指定するための言語はどれか。",
+    answer: "CSS",
+    choices: ["CSS", "HTML", "XML", "SQL"],
+    explanation: "CSSはCascading Style Sheetsの略。文書構造を記述するHTMLと役割を分け、見た目を指定する。"
+  },
+  {
+    id: "add-20260726-variable",
+    batchId: "addition-2026-07-26",
+    category: "アルゴリズム・データ構造",
+    question: "プログラムで値を一時的に記憶し、名前を付けて参照・変更できる領域はどれか。",
+    answer: "変数",
+    choices: ["変数", "定数", "関数", "演算子"],
+    explanation: "変数は、値を格納する名前付きの領域。処理の途中で格納する値を変更できる。"
+  },
+  {
+    id: "add-20260726-pseudocode-assignment-arrow",
+    batchId: "addition-2026-07-26",
+    category: "アルゴリズム・データ構造",
+    question: "ITパスポートの擬似言語で、右辺の式を計算し、その値を左辺の変数へ格納するときに使う記号はどれか。",
+    answer: "擬似言語における代入記号「←」",
+    choices: ["擬似言語における代入記号「←」", "比較記号「＝」", "加算記号「＋」", "連結記号「&」"],
+    explanation: "擬似言語では「変数名 ← 式」の形で代入を表す。矢印の右側を計算し、その結果を左側の変数に格納する。"
+  },
+  {
+    id: "add-20260726-pseudocode-type-name",
+    batchId: "addition-2026-07-26",
+    category: "アルゴリズム・データ構造",
+    question: "擬似言語の「整数型：count」で、countに格納できるデータの種類を示している部分はどれか。",
+    answer: "変数を宣言するときの型名",
+    choices: ["変数を宣言するときの型名", "変数名", "関数名", "引数"],
+    explanation: "変数宣言は「型名：変数名」の形で表す。この例の「整数型」が型名で、格納するデータの種類を決める。"
+  },
+  {
+    id: "add-20260726-array",
+    batchId: "addition-2026-07-26",
+    category: "アルゴリズム・データ構造",
+    question: "同じ種類の複数のデータを一つの名前でまとめ、添字を使って各要素を指定するデータ構造はどれか。",
+    answer: "配列",
+    choices: ["配列", "スタック", "キュー", "変数"],
+    explanation: "配列は複数の要素を順番にまとめたデータ構造。要素は添字（インデックス）で指定する。"
+  },
+  {
+    id: "add-20260726-sequence",
+    batchId: "addition-2026-07-26",
+    category: "アルゴリズム・データ構造",
+    question: "処理を記述された順番どおりに、上から一つずつ実行する基本構造はどれか。",
+    answer: "順次処理",
+    choices: ["順次処理", "選択処理", "繰り返し処理", "分散処理"],
+    explanation: "順次処理は、処理を並んだ順に実行する構造。選択、繰り返しと並ぶ基本的な制御構造の一つ。"
+  },
+  {
+    id: "add-20260726-selection",
+    batchId: "addition-2026-07-26",
+    category: "アルゴリズム・データ構造",
+    question: "条件が成立するかどうかによって、実行する処理を分岐させる基本構造はどれか。",
+    answer: "選択処理",
+    choices: ["選択処理", "順次処理", "繰り返し処理", "並列処理"],
+    explanation: "選択処理は、条件によって実行する道筋を選ぶ構造。if文などで表される。"
+  },
+  {
+    id: "add-20260726-repetition",
+    batchId: "addition-2026-07-26",
+    category: "アルゴリズム・データ構造",
+    question: "条件を満たす間、または決めた回数だけ、同じ処理を反復する基本構造はどれか。",
+    answer: "繰り返し処理",
+    choices: ["繰り返し処理", "順次処理", "選択処理", "割込み処理"],
+    explanation: "繰り返し処理は、同じ手順を条件や回数に応じて実行する構造。for文やwhile文などで表される。"
+  },
+  {
+    id: "add-20260726-distributed-processing",
+    batchId: "addition-2026-07-26",
+    category: "システム構成・仮想化",
+    question: "ネットワークで接続した複数のコンピュータへ処理を分け、互いに連携して実行する方式はどれか。",
+    answer: "分散処理",
+    choices: ["分散処理", "集中処理", "順次処理", "バッチ処理"],
+    explanation: "分散処理は、複数のコンピュータに機能や負荷を分けて処理する方式。負荷分散や拠点分散などに利用される。"
+  },
+  {
+    id: "add-20260726-client-server-system",
+    batchId: "addition-2026-07-26",
+    category: "システム構成・仮想化",
+    question: "サービスを要求する側と、要求に応じて機能やデータを提供する側に役割を分けたシステムはどれか。",
+    answer: "クライアントサーバシステム",
+    choices: ["クライアントサーバシステム", "シンクライアント", "デュアルシステム", "スタンドアロンシステム"],
+    explanation: "クライアントサーバシステムは、要求するクライアントと、サービスを提供するサーバが連携する構成。"
+  },
+  {
+    id: "add-20260726-web-system",
+    batchId: "addition-2026-07-26",
+    category: "システム構成・仮想化",
+    question: "利用者がブラウザから要求を送り、Webサーバなどが処理した結果をページとして返すシステムはどれか。",
+    answer: "Webシステム",
+    choices: ["Webシステム", "シンクライアント", "スタンドアロンシステム", "組込みシステム"],
+    explanation: "Webシステムは、ブラウザとWebサーバがHTTPなどで通信してサービスを提供する。端末ごとの専用アプリを減らしやすい。"
+  },
+  {
+    id: "add-20260726-thin-client",
+    batchId: "addition-2026-07-26",
+    category: "システム構成・仮想化",
+    question: "利用者の端末には必要最小限の機能だけを持たせ、アプリやデータを主にサーバ側で管理する方式はどれか。",
+    answer: "シンクライアント",
+    choices: ["シンクライアント", "クライアントサーバシステム", "スタンドアロン", "ピアツーピア"],
+    explanation: "シンクライアントは、端末側の機能を絞ってサーバに集約する方式。情報漏えい対策や一元管理に役立つ。"
+  },
+  {
+    id: "add-20260726-server-virtualization",
+    batchId: "addition-2026-07-26",
+    category: "システム構成・仮想化",
+    question: "一台の物理コンピュータ上に、互いに独立した複数の仮想的なコンピュータを動かす技術はどれか。",
+    answer: "サーバの仮想化",
+    choices: ["サーバの仮想化", "分散処理", "シンクライアント", "RAID"],
+    explanation: "サーバの仮想化は、CPUやメモリなどを分けて複数の仮想マシンを稼働させる技術。物理資源を効率よく使える。"
+  },
+  {
+    id: "add-20260726-simplex-system",
+    batchId: "addition-2026-07-26",
+    category: "システム構成・仮想化",
+    question: "予備系を用意せず、一組の機器だけで処理する最も単純なシステム構成はどれか。",
+    answer: "シンプレックスシステム",
+    choices: ["シンプレックスシステム", "デュプレックスシステム", "デュアルシステム", "クラスタシステム"],
+    explanation: "シンプレックスシステムは一系統だけで動作する構成。低コストだが、その系統の故障が停止につながりやすい。"
+  },
+  {
+    id: "add-20260726-duplex-system",
+    batchId: "addition-2026-07-26",
+    category: "システム構成・仮想化",
+    question: "稼働系と待機系を用意し、稼働系が故障したときに待機系へ切り替えて処理を続ける構成はどれか。",
+    answer: "デュプレックスシステム",
+    choices: ["デュプレックスシステム", "デュアルシステム", "シンプレックスシステム", "マルチプロセッサシステム"],
+    explanation: "デュプレックスシステムは、主系と待機系で構成する。両系で同じ処理を照合するデュアルシステムとは異なる。"
+  },
+  {
+    id: "add-20260726-dual-system",
+    batchId: "addition-2026-07-26",
+    category: "システム構成・仮想化",
+    question: "二組のシステムで同じ処理を同時に行い、結果を照合して信頼性を高める構成はどれか。",
+    answer: "デュアルシステム",
+    choices: ["デュアルシステム", "デュプレックスシステム", "シンプレックスシステム", "クライアントサーバシステム"],
+    explanation: "デュアルシステムは、二系統で同じ処理を行って結果を照合する。片方を待機させるデュプレックスシステムより高い信頼性を狙う。"
+  },
+  {
+    id: "add-20260726-raid",
+    batchId: "addition-2026-07-26",
+    category: "ストレージ・性能・信頼性",
+    question: "複数の磁気ディスクを組み合わせ、一台の装置のように扱って性能や信頼性を高める技術はどれか。",
+    answer: "RAID",
+    choices: ["RAID", "NAS", "SAN", "UPS"],
+    explanation: "RAIDはRedundant Arrays of Independent Disksの略。データの分散や冗長化によって性能・信頼性を高める。方式によって効果は異なる。"
+  },
+  {
+    id: "add-20260726-striping",
+    batchId: "addition-2026-07-26",
+    category: "ストレージ・性能・信頼性",
+    question: "データを細かく分割して複数のディスクへ並行して読み書きし、高速化を図る記録方式はどれか。",
+    answer: "ストライピング",
+    choices: ["ストライピング", "ミラーリング", "バックアップ", "キャッシング"],
+    explanation: "ストライピングはデータを複数ディスクに分散する方式。RAID 0は高速化できるが、冗長性はない。"
+  },
+  {
+    id: "add-20260726-mirroring",
+    batchId: "addition-2026-07-26",
+    category: "ストレージ・性能・信頼性",
+    question: "同じデータを二台以上のディスクへ同時に書き込み、一台が故障してもデータを利用できるようにする方式はどれか。",
+    answer: "ミラーリング",
+    choices: ["ミラーリング", "ストライピング", "圧縮", "デフラグ"],
+    explanation: "ミラーリングは同じ内容を複製して保存する方式。RAID 1で使われ、使用できる容量はディスク合計より少なくなる。"
+  },
+  {
+    id: "add-20260726-nas",
+    batchId: "addition-2026-07-26",
+    category: "ストレージ・性能・信頼性",
+    question: "ネットワークへ直接接続し、複数の利用者へファイル共有機能を提供する記憶装置はどれか。",
+    answer: "NAS",
+    choices: ["NAS", "RAID", "UPS", "キャッシュメモリ"],
+    explanation: "NASはNetwork Attached Storageの略。LANなどに接続し、ファイル単位で共有できるストレージ。"
+  },
+  {
+    id: "add-20260726-response-time",
+    batchId: "addition-2026-07-26",
+    category: "ストレージ・性能・信頼性",
+    question: "利用者が処理を要求してから、システムが応答を返すまでにかかる時間を表す指標はどれか。",
+    answer: "レスポンスタイム",
+    choices: ["レスポンスタイム", "ターンアラウンドタイム", "スループット", "クロック周波数"],
+    explanation: "レスポンスタイムは要求から応答までの時間。ターンアラウンドタイムは、処理の投入から結果がすべて得られるまでの時間を指す。"
+  },
+  {
+    id: "add-20260726-tco",
+    batchId: "addition-2026-07-26",
+    category: "ストレージ・性能・信頼性",
+    question: "情報システムの導入費だけでなく、運用、保守、教育、廃棄など利用期間全体の費用を合計したものはどれか。",
+    answer: "TCO",
+    choices: ["TCO", "ROI", "NPV", "BEP"],
+    explanation: "TCOはTotal Cost of Ownership（総保有コスト）の略。購入価格だけでなく、保有中にかかる費用を総合して比較する。"
+  },
+  {
+    id: "add-20260726-mtbf",
+    batchId: "addition-2026-07-26",
+    category: "ストレージ・性能・信頼性",
+    question: "修理して使い続けるシステムが、故障してから次に故障するまでに正常稼働した平均時間はどれか。",
+    answer: "MTBF",
+    choices: ["MTBF", "MTTR", "TCO", "SLA"],
+    explanation: "MTBFはMean Time Between Failures（平均故障間隔）の略。値が大きいほど、一般に故障しにくいと考えられる。"
+  },
+  {
+    id: "add-20260726-mttr",
+    batchId: "addition-2026-07-26",
+    category: "ストレージ・性能・信頼性",
+    question: "故障したシステムを修理し、再び利用できる状態へ戻すまでにかかる平均時間はどれか。",
+    answer: "MTTR",
+    choices: ["MTTR", "MTBF", "TCO", "RTO"],
+    explanation: "MTTRはMean Time To Repair（平均修復時間）の略。値が小さいほど、一般に復旧が速い。"
+  },
+  {
+    id: "add-20260726-fail-soft",
+    batchId: "addition-2026-07-26",
+    category: "ストレージ・性能・信頼性",
+    question: "障害が起きたとき、一部の機能や性能を低下させてもシステム全体の停止を避け、可能な範囲で処理を続ける考え方はどれか。",
+    answer: "フェールソフト",
+    choices: ["フェールソフト", "フェールセーフ", "フールプルーフ", "フォールトトレラント"],
+    explanation: "フェールソフトは、故障時に機能を段階的に縮小して運転を続ける考え方。安全な状態へ停止させるフェールセーフとは異なる。"
+  },
+  {
+    id: "add-20260726-fail-safe",
+    batchId: "addition-2026-07-26",
+    category: "ストレージ・性能・信頼性",
+    question: "機器が故障したとき、被害が広がらないよう動作を安全な側へ移す考え方はどれか。",
+    answer: "フェールセーフ",
+    choices: ["フェールセーフ", "フェールソフト", "フールプルーフ", "フォールトトレラント"],
+    explanation: "フェールセーフは、故障しても危険にならない状態にする設計。例として、故障時に踏切の遮断機を下げる動作がある。"
+  },
+  {
+    id: "add-20260726-fool-proof",
+    batchId: "addition-2026-07-26",
+    category: "ストレージ・性能・信頼性",
+    question: "利用者が誤った操作をしても事故や故障につながらないよう、操作そのものをできなくするなどの工夫はどれか。",
+    answer: "フールプルーフ",
+    choices: ["フールプルーフ", "フェールセーフ", "フェールソフト", "フォールトトレラント"],
+    explanation: "フールプルーフは、誤操作をしても危険な結果にならないようにする設計。故障後の安全を考えるフェールセーフとは原因が異なる。"
+  },
+  {
+    id: "add-20260726-fault-tolerant",
+    batchId: "addition-2026-07-26",
+    category: "ストレージ・性能・信頼性",
+    question: "構成要素の一部が故障しても、冗長な構成などによってシステム全体の処理を継続できるようにする考え方はどれか。",
+    answer: "フォールトトレラント",
+    choices: ["フォールトトレラント", "フェールソフト", "フェールセーフ", "フールプルーフ"],
+    explanation: "フォールトトレラントは、故障を許容してサービスを継続する設計思想。部品の二重化などで実現する。"
+  },
+  {
+    id: "add-20260726-bathtub-curve",
+    batchId: "addition-2026-07-26",
+    category: "ストレージ・性能・信頼性",
+    question: "機器の故障率が、使用開始直後は高く、その後は低く安定し、寿命が近づくと再び高くなる形を表す曲線はどれか。",
+    answer: "バスタブ曲線",
+    choices: ["バスタブ曲線", "S字曲線", "経験曲線", "正規分布曲線"],
+    explanation: "バスタブ曲線は、初期故障期・偶発故障期・摩耗故障期における故障率の変化を浴槽の断面のような形で表す。"
+  },
+  {
+    id: "add-20260726-wearable-device",
+    batchId: "addition-2026-07-26",
+    category: "ハードウェア・周辺機器",
+    question: "腕時計型や眼鏡型など、身体に装着して持ち歩きながら利用する情報機器はどれか。",
+    answer: "ウェアラブル端末",
+    choices: ["ウェアラブル端末", "タブレット端末", "シンクライアント", "ブレードサーバ"],
+    explanation: "ウェアラブル端末は、身に着けて使う小型コンピュータ。健康情報の測定や通知の確認などに利用される。"
+  },
+  {
+    id: "add-20260726-blade-server",
+    batchId: "addition-2026-07-26",
+    category: "ハードウェア・周辺機器",
+    question: "薄い板状のサーバを共通の筐体へ複数差し込み、電源や冷却設備を共有して高密度に設置するサーバはどれか。",
+    answer: "ブレードサーバ",
+    choices: ["ブレードサーバ", "ラックマウントサーバ", "タワー型サーバ", "NAS"],
+    explanation: "ブレードサーバは、薄型のサーバモジュールを専用筐体へ集約する方式。省スペースで一括管理しやすい。"
+  },
+  {
+    id: "add-20260726-clock-frequency",
+    batchId: "addition-2026-07-26",
+    category: "ハードウェア・周辺機器",
+    question: "CPUが動作のタイミングを取る信号を1秒間に何回繰り返すかを、Hzで表したものはどれか。",
+    answer: "クロック周波数",
+    choices: ["クロック周波数", "解像度", "転送速度", "レスポンスタイム"],
+    explanation: "クロック周波数は、CPUなどの基準信号の繰返し回数。GHzは10億Hzを表すが、性能は周波数だけでは決まらない。"
+  },
+  {
+    id: "add-20260726-multicore-processor",
+    batchId: "addition-2026-07-26",
+    category: "ハードウェア・周辺機器",
+    question: "一つのCPUパッケージ内に複数の演算処理装置を持ち、複数の処理を並行して実行しやすくしたものはどれか。",
+    answer: "マルチコアプロセッサ",
+    choices: ["マルチコアプロセッサ", "シングルコアプロセッサ", "ブレードサーバ", "GPUメモリ"],
+    explanation: "マルチコアプロセッサは、一つのプロセッサに複数のコアを搭載する。並列化できる処理の性能向上に役立つ。"
+  },
+  {
+    id: "add-20260726-flash-memory",
+    batchId: "addition-2026-07-26",
+    category: "ハードウェア・周辺機器",
+    question: "電源を切っても内容を保持し、電気的に一括消去・書換えができる半導体メモリはどれか。",
+    answer: "フラッシュメモリ",
+    choices: ["フラッシュメモリ", "DRAM", "SRAM", "キャッシュメモリ"],
+    explanation: "フラッシュメモリは不揮発性の半導体メモリ。USBメモリ、SSD、メモリカードなどに使われる。"
+  },
+  {
+    id: "add-20260726-cd-capacity",
+    batchId: "addition-2026-07-26",
+    category: "ハードウェア・周辺機器",
+    question: "代表的な記憶容量が700MBである光ディスクはどれか。",
+    answer: "CD",
+    choices: ["CD", "DVD", "Blu-ray Disc", "フラッシュメモリ"],
+    explanation: "CDはCompact Discの略。代表的な記憶容量は700MBで、DVDやBlu-ray Discより小さい。"
+  },
+  {
+    id: "add-20260726-dvd-capacity",
+    batchId: "addition-2026-07-26",
+    category: "ハードウェア・周辺機器",
+    question: "片面1層の代表的な記憶容量が4.7GBである光ディスクはどれか。",
+    answer: "DVD",
+    choices: ["DVD", "CD", "Blu-ray Disc", "フラッシュメモリ"],
+    explanation: "DVDはDigital Versatile Discの略。片面1層の代表的な記憶容量は4.7GBである。"
+  },
+  {
+    id: "add-20260726-bluray-capacity",
+    batchId: "addition-2026-07-26",
+    category: "ハードウェア・周辺機器",
+    question: "1層の代表的な記憶容量が25GBで、青紫色レーザーを使う光ディスクはどれか。",
+    answer: "Blu-ray Disc",
+    choices: ["Blu-ray Disc", "DVD", "CD", "フラッシュメモリ"],
+    explanation: "Blu-ray Discは、1層で25GBが代表的な記憶容量。DVDより短い波長の青紫色レーザーを使い、高密度に記録する。"
+  },
+  {
+    id: "add-20260726-ram-volatile",
+    batchId: "addition-2026-07-26",
+    category: "ハードウェア・周辺機器",
+    question: "読み書きができる主記憶として使われ、一般に電源を切ると内容が失われるメモリはどれか。",
+    answer: "RAM",
+    choices: ["RAM", "ROM", "フラッシュメモリ", "光ディスク"],
+    explanation: "RAMはRandom Access Memoryの略。一般に揮発性で、電源を切ると記憶内容が失われる。"
+  },
+  {
+    id: "add-20260726-rom-nonvolatile",
+    batchId: "addition-2026-07-26",
+    category: "ハードウェア・周辺機器",
+    question: "主に読出し用として使われ、電源を切っても内容が保持される不揮発性メモリはどれか。",
+    answer: "ROM",
+    choices: ["ROM", "RAM", "DRAM", "SRAM"],
+    explanation: "ROMはRead Only Memoryの略。不揮発性で、電源を切っても記憶内容を保持する。"
+  },
+  {
+    id: "add-20260726-dram",
+    batchId: "addition-2026-07-26",
+    category: "ハードウェア・周辺機器",
+    question: "コンデンサに電荷を蓄えて情報を記憶し、内容を保つために定期的な再書込みが必要なメモリはどれか。",
+    answer: "DRAM",
+    choices: ["DRAM", "SRAM", "ROM", "フラッシュメモリ"],
+    explanation: "DRAMはDynamic Random Access Memoryの略。定期的なリフレッシュが必要で、主記憶に広く使われる。"
+  },
+  {
+    id: "add-20260726-sram",
+    batchId: "addition-2026-07-26",
+    category: "ハードウェア・周辺機器",
+    question: "フリップフロップ回路で情報を保持し、再書込み動作が不要で高速なためキャッシュに使われるメモリはどれか。",
+    answer: "SRAM",
+    choices: ["SRAM", "DRAM", "ROM", "フラッシュメモリ"],
+    explanation: "SRAMはStatic Random Access Memoryの略。DRAMより高速でリフレッシュ不要だが、一般に高価で容量を大きくしにくい。"
+  },
+  {
+    id: "add-20260726-dpi",
+    batchId: "addition-2026-07-26",
+    category: "ハードウェア・周辺機器",
+    question: "プリンタやスキャナの解像度を、1インチ当たりに並ぶ点の数で表す単位はどれか。",
+    answer: "dpi",
+    choices: ["dpi", "ppm", "bps", "Hz"],
+    explanation: "dpiはdots per inchの略。1インチ当たりのドット数を表し、値が大きいほど細かく表現できる。"
+  },
+  {
+    id: "add-20260726-ppm",
+    batchId: "addition-2026-07-26",
+    category: "ハードウェア・周辺機器",
+    question: "プリンタの印刷速度を、1分間に印刷できるページ数で表す単位はどれか。",
+    answer: "ppm",
+    choices: ["ppm", "dpi", "bps", "rpm"],
+    explanation: "ppmはpages per minuteの略。1分間に何ページ印刷できるかを表す。dpiは解像度の単位。"
+  },
+  {
+    id: "add-20260726-plug-and-play",
+    batchId: "addition-2026-07-26",
+    category: "ハードウェア・周辺機器",
+    question: "周辺機器を接続したとき、OSが機器を自動検出し、必要な設定を行って利用可能にする仕組みはどれか。",
+    answer: "プラグアンドプレイ",
+    choices: ["プラグアンドプレイ", "ホットスワップ", "デュアルブート", "オーバークロック"],
+    explanation: "プラグアンドプレイは、接続した機器を自動認識して設定する仕組み。電源を入れたまま交換できることを表すホットスワップとは異なる。"
   }
 ];
