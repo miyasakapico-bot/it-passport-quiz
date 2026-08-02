@@ -178,7 +178,7 @@ h1, h2 { line-height: 1.35; }
   border-radius: 1rem;
 }
 .range-selector legend { padding: 0 0.35rem; color: var(--apple-dark); font-weight: 850; }
-.range-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem; }
+.range-options { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.65rem; }
 .range-option {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -349,6 +349,10 @@ kbd { padding: 0.1rem 0.35rem; background: var(--white); border: 1px solid #cfc9
 .empty-state { padding: 2rem 1rem; color: var(--muted); background: #fbf9f6; border-radius: 0.9rem; text-align: center; }
 
 footer { padding: 1rem 1rem 2.25rem; color: var(--muted); text-align: center; font-size: 0.82rem; }
+
+@media (max-width: 980px) {
+  .range-options { grid-template-columns: 1fr 1fr; }
+}
 
 @media (max-width: 760px) {
   .app-shell { width: min(100% - 1rem, 680px); margin-top: 1rem; }

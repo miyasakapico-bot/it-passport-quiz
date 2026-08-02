@@ -4,6 +4,7 @@
   const QUESTIONS = Array.isArray(globalThis.QUIZ_QUESTIONS) ? globalThis.QUIZ_QUESTIONS : [];
   const STORAGE_KEY = "pofurin-it-passport-history-v1";
   const CURRENT_BATCH_ID = "addition-2026-07-26";
+  const CHAPTER_13_15_BATCH_ID = "addition-2026-08-02-ch13-15";
   const POSITIVE_MESSAGES = [
     "その調子なのだ！",
     "ひとつ身についたのだ！",
@@ -38,7 +39,32 @@
     "ぽふりん、うれしくて転がってしまうのだー！",
     "葉っぱをぱたぱたして祝うのだ！",
     "よく見抜いたのだ！おみごとなのだ！",
-    "正解だから、よいのだー！"
+    "正解だから、よいのだー！",
+    "正解なのだ！知識がまたひとつ増えたのだー！",
+    "ぶぃぶぃっ☆ その調子なのだ！",
+    "今の一問が未来のぴこちゃを助けるのだ！",
+    "見事なのだ！ぽふりんも短い腕で拍手するのだ！",
+    "正解祝いのカルビを検討するのだ…😏",
+    "努力した事実まで、しっかり保存したのだ！",
+    "一歩進んだのだ！かわいいから二歩分でもよいのだ！",
+    "かわいいから、よいのだ！"
+  ];
+  const INCORRECT_MESSAGES = [
+    "あとで復習するのだ！",
+    "惜しいのだ！今ここで覚えれば本番では正解なのだ！",
+    "復習チャンスなのだ。経験だけ持ち帰るのだ！",
+    "間違いを見つけたから、今日はもう一つ強くなったのだ！",
+    "焦らず、油断せずなのだ。解説を一緒に見るのだ！",
+    "この問題、次に会ったときが勝負なのだ！",
+    "ぽふりんも一緒に覚えるから大丈夫なのだ！",
+    "不正解は敗北ではなく、弱点発見イベントなのだ！"
+  ];
+  const STREAK_MESSAGES = [
+    "連続正解なのだー！葉っぱが誇らしげに揺れているのだ！",
+    "勢いが来ているのだ！ぶぃぶぃっ☆",
+    "けいかくどおりなのだ…😏",
+    "知識のコンボがつながっているのだ！",
+    "最高レアの集中バフをかけるのだー！"
   ];
   const MODE_LABELS = {
     all: "全問題",
@@ -50,6 +76,7 @@
   const RANGE_LABELS = {
     legacy: "これまでの問題",
     current: "今回追加した問題",
+    chapter1315: "追加範囲②（13～15章）",
     all: "すべての問題"
   };
 
@@ -66,6 +93,7 @@
     rangeSummary: document.querySelector("#range-summary"),
     legacyRangeCount: document.querySelector("#legacy-range-count"),
     currentRangeCount: document.querySelector("#current-range-count"),
+    chapterRangeCount: document.querySelector("#chapter-range-count"),
     allRangeCount: document.querySelector("#all-range-count"),
     questionCountLabel: document.querySelector("#question-count-label"),
     weakModeCount: document.querySelector("#weak-mode-count"),
@@ -136,6 +164,10 @@
     return result;
   }
 
+  function randomMessage(messages) {
+    return messages[Math.floor(Math.random() * messages.length)];
+  }
+
   function showView(target) {
     elements.views.forEach((view) => {
       view.hidden = view !== target;
@@ -152,6 +184,7 @@
   function getRangePool(range = selectedRange) {
     if (range === "legacy") return QUESTIONS.filter((question) => !question.batchId);
     if (range === "current") return QUESTIONS.filter((question) => question.batchId === CURRENT_BATCH_ID);
+    if (range === "chapter1315") return QUESTIONS.filter((question) => question.batchId === CHAPTER_13_15_BATCH_ID);
     return [...QUESTIONS];
   }
 
@@ -180,8 +213,10 @@
 
     const legacyCount = getRangePool("legacy").length;
     const currentCount = getRangePool("current").length;
+    const chapterCount = getRangePool("chapter1315").length;
     elements.legacyRangeCount.textContent = `${legacyCount}問`;
     elements.currentRangeCount.textContent = `${currentCount}問`;
+    elements.chapterRangeCount.textContent = `${chapterCount}問`;
     elements.allRangeCount.textContent = `${QUESTIONS.length}問`;
     elements.rangeSummary.textContent = `選択中：${RANGE_LABELS[selectedRange]}（${rangePool.length}問）`;
   }
@@ -415,19 +450,19 @@
     if (isCorrect) {
       elements.feedback.classList.add("correct");
       elements.feedbackTitle.textContent = "✓ 正解！";
-      elements.mascotMessage.textContent = POSITIVE_MESSAGES[Math.floor(Math.random() * POSITIVE_MESSAGES.length)];
+      elements.mascotMessage.textContent = randomMessage(session.streak >= 2 ? STREAK_MESSAGES : POSITIVE_MESSAGES);
       elements.feedbackMascot.src = "assets/pofurin-celebrate.png";
       elements.feedbackMascot.alt = "両手を上げて喜ぶぽふりん";
     } else if (type === "unknown") {
       elements.feedback.classList.add("unknown");
       elements.feedbackTitle.textContent = "？ ここで覚えよう";
-      elements.mascotMessage.textContent = "あとで復習するのだ！";
+      elements.mascotMessage.textContent = randomMessage(INCORRECT_MESSAGES);
       elements.feedbackMascot.src = "assets/pofurin-study.png";
       elements.feedbackMascot.alt = "一緒に勉強するぽふりん";
     } else {
       elements.feedback.classList.add("incorrect");
       elements.feedbackTitle.textContent = "✕ おしい！";
-      elements.mascotMessage.textContent = "あとで復習するのだ！";
+      elements.mascotMessage.textContent = randomMessage(INCORRECT_MESSAGES);
       elements.feedbackMascot.src = "assets/pofurin-thinking.png";
       elements.feedbackMascot.alt = "やさしく考えるぽふりん";
     }

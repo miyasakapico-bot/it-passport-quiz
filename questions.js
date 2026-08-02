@@ -1423,5 +1423,869 @@ globalThis.QUIZ_QUESTIONS = [
     answer: "プラグアンドプレイ",
     choices: ["プラグアンドプレイ", "ホットスワップ", "デュアルブート", "オーバークロック"],
     explanation: "プラグアンドプレイは、接続した機器を自動認識して設定する仕組み。電源を入れたまま交換できることを表すホットスワップとは異なる。"
+  },
+  {
+    id: "add-20260802-er-diagram",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "データベース",
+    question: "業務で扱う人・商品などの実体と、それらの関係を図で表すデータモデルはどれか。",
+    answer: "E-R図",
+    choices: ["E-R図", "DFD", "フローチャート", "状態遷移図"],
+    explanation: "E-R図はEntity-Relationship Diagramの略。エンティティ（実体）とリレーションシップ（関連）を表す。DFDはデータの流れを表す図である。"
+  },
+  {
+    id: "add-20260802-entity",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "データベース",
+    question: "データ設計で、顧客・商品・注文のように情報を管理する対象となる実体はどれか。",
+    answer: "エンティティ",
+    choices: ["属性", "エンティティ", "リレーションシップ", "インデックス"],
+    explanation: "エンティティは、データとして管理する人・物・出来事などの実体。属性は実体が持つ名前や価格などの性質、リレーションシップは実体同士の関連である。"
+  },
+  {
+    id: "add-20260802-relationship",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "データベース",
+    question: "データ設計で、顧客が注文する、注文に商品が含まれる、という実体同士の関連を指すものはどれか。",
+    answer: "リレーションシップ",
+    choices: ["エンティティ", "属性", "リレーションシップ", "主キー"],
+    explanation: "リレーションシップはエンティティ同士の関連を表す。エンティティは管理対象そのもの、属性はその対象の特徴である。"
+  },
+  {
+    id: "add-20260802-normalization",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "データベース",
+    question: "表の重複データや更新時の矛盾を減らすため、項目の関係に基づいて表を適切に分割する作業はどれか。",
+    answer: "正規化",
+    choices: ["暗号化", "索引付け", "排他制御", "正規化"],
+    explanation: "正規化は、データの重複や追加・更新・削除時の不整合を減らすように表を整理する作業。暗号化や排他制御とは目的が異なる。"
+  },
+  {
+    id: "add-20260802-dbms",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "データベース",
+    question: "データを体系的に蓄積し、検索・更新・同時利用・障害回復などをまとめて管理するソフトウェアはどれか。",
+    answer: "DBMS",
+    choices: ["DBMS", "OS", "BI", "DWH"],
+    explanation: "DBMSはDatabase Management System（データベース管理システム）の略。データの一貫性を保ちながら、効率的な検索や更新を提供する。"
+  },
+  {
+    id: "add-20260802-relational-selection",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "データベース",
+    question: "関係データベースの表から、条件に合う行だけを取り出す操作はどれか。",
+    answer: "選択",
+    choices: ["射影", "選択", "結合", "正規化"],
+    explanation: "選択は条件に合う行を取り出す操作。射影は必要な列を取り出し、結合は複数の表を関連付けて一つの結果にする。"
+  },
+  {
+    id: "add-20260802-relational-projection",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "データベース",
+    question: "関係データベースの表から、氏名列と電話番号列のように必要な列だけを取り出す操作はどれか。",
+    answer: "射影",
+    choices: ["選択", "結合", "射影", "排他制御"],
+    explanation: "射影は必要な列を取り出す操作。選択は条件に合う行を取り出す操作なので、行と列の違いを押さえる。"
+  },
+  {
+    id: "add-20260802-relational-join",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "データベース",
+    question: "顧客表と注文表を顧客番号で対応付け、一つの検索結果として扱う操作はどれか。",
+    answer: "結合",
+    choices: ["選択", "射影", "正規化", "結合"],
+    explanation: "結合は、共通する項目などを使って複数の表を関連付ける操作。選択は行、射影は列を取り出す操作である。"
+  },
+  {
+    id: "add-20260802-sql",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "データベース",
+    question: "関係データベースに対して、データの定義・検索・追加・更新などを指示するための標準的な言語はどれか。",
+    answer: "SQL",
+    choices: ["SQL", "HTML", "CSS", "XML"],
+    explanation: "SQLはStructured Query Language（構造化問合せ言語）の略。関係データベースの定義や検索、更新などに用いる。"
+  },
+  {
+    id: "add-20260802-transaction-management",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "データベース",
+    question: "振込処理の出金と入金のような一連の処理を一つの単位として扱い、すべて成功か、すべて取消しにする管理はどれか。",
+    answer: "トランザクション管理",
+    choices: ["排他制御", "トランザクション管理", "アクセス管理", "バックアップ管理"],
+    explanation: "トランザクション管理は、関連する一連の処理を一つの単位として扱い、データの整合性を保つ。排他制御は同時更新の衝突を防ぐ仕組みである。"
+  },
+  {
+    id: "add-20260802-commit",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "データベース",
+    question: "一連の更新処理が正常に終わったとき、その変更内容を確定してデータベースへ反映する操作はどれか。",
+    answer: "コミット",
+    choices: ["ロールバック", "ロールフォワード", "コミット", "チェックポイント"],
+    explanation: "コミットはトランザクションの変更を確定する操作。ロールバックは未完了の変更を取り消す操作である。"
+  },
+  {
+    id: "add-20260802-backup-file",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "データベース",
+    question: "障害や誤削除に備え、ある時点のデータを別の媒体などへ複製して保存したものはどれか。",
+    answer: "バックアップファイル",
+    choices: ["ログファイル", "チェックポイント", "一時ファイル", "バックアップファイル"],
+    explanation: "バックアップファイルは、復旧に備えてデータを複製したもの。ログファイルはバックアップ後に行われた更新履歴などを記録する。"
+  },
+  {
+    id: "add-20260802-log-file",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "データベース",
+    question: "障害回復に利用するため、データベースへの更新内容や処理の経過を時系列で記録したものはどれか。",
+    answer: "ログファイル",
+    choices: ["ログファイル", "バックアップファイル", "マスタファイル", "アーカイブファイル"],
+    explanation: "ログファイルは更新履歴を記録し、取消しや再実行による復旧に利用する。バックアップファイルは特定時点のデータの複製である。"
+  },
+  {
+    id: "add-20260802-rollback",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "データベース",
+    question: "処理の途中で異常が起きたとき、更新前の状態へ戻して未完了の変更を取り消す回復処理はどれか。",
+    answer: "ロールバック",
+    choices: ["ロールフォワード", "ロールバック", "コミット", "バックアップ"],
+    explanation: "ロールバックはログを使って更新前へ戻すバックワードリカバリ。ロールフォワードはバックアップ後の更新を再適用して障害直前へ進める。"
+  },
+  {
+    id: "add-20260802-rollforward",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "データベース",
+    question: "障害後、保存しておいた複製を戻してから更新履歴を再適用し、障害直前の状態へ近づける回復処理はどれか。",
+    answer: "ロールフォワード",
+    choices: ["ロールバック", "コミット", "ロールフォワード", "排他制御"],
+    explanation: "ロールフォワードはバックアップを戻し、その後のログを順に反映するフォワードリカバリ。ロールバックは更新を取り消して前の状態へ戻す。"
+  },
+  {
+    id: "add-20260802-exclusive-control",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "データベース",
+    question: "複数の利用者が同じデータを同時に更新して矛盾が起きないよう、一方の処理中は他方の更新を制限する仕組みはどれか。",
+    answer: "排他制御",
+    choices: ["正規化", "認証", "暗号化", "排他制御"],
+    explanation: "排他制御は同じデータへの同時更新を適切に制限し、整合性を保つ。同時実行制御とも呼ばれる。"
+  },
+  {
+    id: "add-20260802-lan",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "一つの建物や敷地内など、比較的狭い範囲の機器を接続するネットワークはどれか。",
+    answer: "LAN",
+    choices: ["LAN", "WAN", "VPN", "PAN"],
+    explanation: "LANはLocal Area Network（構内通信網）の略で、建物や敷地内などの限られた範囲を接続する。WANは離れた拠点など広い範囲を結ぶ。"
+  },
+  {
+    id: "add-20260802-wan",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "通信事業者の回線などを使い、地理的に離れた本社と支社のネットワークを結ぶ広域網はどれか。",
+    answer: "WAN",
+    choices: ["LAN", "WAN", "PAN", "VLAN"],
+    explanation: "WANはWide Area Network（広域通信網）の略。離れた地域のLAN同士などを接続する。"
+  },
+  {
+    id: "add-20260802-router",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "異なるネットワーク間で宛先を判断し、パケットを適切な経路へ中継する装置はどれか。",
+    answer: "ルーター",
+    choices: ["ハブ", "リピータ", "ルーター", "アクセスポイント"],
+    explanation: "ルーターはIPアドレスなどを基に、異なるネットワーク間の通信経路を選んで中継する。ハブは主に同じLAN内の機器を接続する。"
+  },
+  {
+    id: "add-20260802-default-gateway",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "端末が自分と異なるネットワークへ通信するとき、最初の送り先として設定する中継点はどれか。",
+    answer: "デフォルトゲートウェイ",
+    choices: ["DNSサーバ", "DHCPサーバ", "プロキシサーバ", "デフォルトゲートウェイ"],
+    explanation: "デフォルトゲートウェイは、端末が外部ネットワークへパケットを送るときの出口。通常はルーターのアドレスを設定する。"
+  },
+  {
+    id: "add-20260802-essid",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "無線ネットワークを識別するために付ける名前で、端末の接続先一覧に表示されるものはどれか。",
+    answer: "ESSID",
+    choices: ["ESSID", "MACアドレス", "IPアドレス", "ポート番号"],
+    explanation: "ESSIDはExtended Service Set Identifierの略で、無線LANを識別するネットワーク名。機器固有のMACアドレスとは役割が異なる。"
+  },
+  {
+    id: "add-20260802-hub",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "同じ構内ネットワークで複数の端末や機器をケーブル接続するための集線装置はどれか。",
+    answer: "ハブ",
+    choices: ["ルーター", "ハブ", "モデム", "ファイアウォール"],
+    explanation: "ハブは同じLAN内の複数機器を接続する装置。一般的なスイッチングハブは宛先に応じてフレームを転送する。"
+  },
+  {
+    id: "add-20260802-ethernet",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "IEEE 802.3として標準化され、オフィスや家庭の有線ネットワークで広く使われる通信方式はどれか。",
+    answer: "イーサネット",
+    choices: ["Wi-Fi", "Bluetooth", "イーサネット", "NFC"],
+    explanation: "イーサネットは有線LANで広く使われる通信規格。無線LANのWi-Fiや近距離無線のBluetoothとは異なる。"
+  },
+  {
+    id: "add-20260802-essid-stealth",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "無線アクセスポイントがネットワーク名を知らせる信号を止め、端末の接続先一覧に表示されにくくする設定はどれか。",
+    answer: "ESSIDステルス",
+    choices: ["MACアドレスフィルタリング", "WPA2", "VPN", "ESSIDステルス"],
+    explanation: "ESSIDステルスはネットワーク名の通知を抑える設定。ただし通信を解析すれば名前を知られる可能性があり、暗号化の代わりにはならない。"
+  },
+  {
+    id: "add-20260802-plc",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "建物内の電力配線へ通信信号を重ね、専用アダプタをコンセントにつないでデータ通信する方式はどれか。",
+    answer: "PLC",
+    choices: ["PLC", "FTTH", "VoIP", "LPWA"],
+    explanation: "PLCはPower Line Communication（電力線通信）の略。既設の電力線を通信経路として利用する。"
+  },
+  {
+    id: "add-20260802-communication-protocol",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "異なる機器同士が通信できるように、データ形式・送受信手順・タイミングなどを定めた共通の規則はどれか。",
+    answer: "通信プロトコル",
+    choices: ["通信回線", "通信プロトコル", "ドメイン名", "トポロジ"],
+    explanation: "通信プロトコルは、機器間通信のための取り決め。SMTPやHTTP、TCP/IPなどが代表例である。"
+  },
+  {
+    id: "add-20260802-smtp",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "電子メールを送信したり、メールサーバ間で転送したりするときに使うプロトコルはどれか。",
+    answer: "SMTP",
+    choices: ["POP", "IMAP", "SMTP", "FTP"],
+    explanation: "SMTPはSimple Mail Transfer Protocolの略で、メールの送信・転送に使う。POPとIMAPはサーバ上のメールを受信・閲覧するためのプロトコルである。"
+  },
+  {
+    id: "add-20260802-pop",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "メールサーバから端末へメッセージを受信し、端末側で読む使い方に向くプロトコルはどれか。",
+    answer: "POP",
+    choices: ["SMTP", "IMAP", "HTTP", "POP"],
+    explanation: "POPはPost Office Protocolの略で、サーバから端末へメールを取得する。IMAPはサーバ上に置いたまま複数端末で管理しやすい。"
+  },
+  {
+    id: "add-20260802-imap",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "メッセージをサーバ上に置いたまま、複数端末で既読状態やフォルダを同期して管理するのに向くプロトコルはどれか。",
+    answer: "IMAP",
+    choices: ["IMAP", "SMTP", "POP", "FTP"],
+    explanation: "IMAPはInternet Message Access Protocolの略。サーバ上のメールボックスを操作するため、複数端末で状態を共有しやすい。"
+  },
+  {
+    id: "add-20260802-ip-address",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "TCP/IPネットワークで、通信相手となる機器や接続点を識別し、パケットの届け先を示す番号はどれか。",
+    answer: "IPアドレス",
+    choices: ["MACアドレス", "IPアドレス", "ポート番号", "ドメイン名"],
+    explanation: "IPアドレスはInternet Protocol addressの略で、ネットワーク上の通信先を識別し経路制御に使う。ポート番号は機器内のサービスを識別する。"
+  },
+  {
+    id: "add-20260802-port-number",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "一台のコンピュータで動くWebやメールなど、通信先のアプリケーションやサービスを識別する番号はどれか。",
+    answer: "ポート番号",
+    choices: ["IPアドレス", "MACアドレス", "ポート番号", "ESSID"],
+    explanation: "ポート番号は一台の機器内で通信先のサービスを識別する。IPアドレスはネットワーク上の機器、MACアドレスはネットワークインタフェースの識別に使う。"
+  },
+  {
+    id: "add-20260802-mac-address",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "主に同じ構内ネットワークで、ネットワークインタフェースを識別してフレームを届けるために使う識別情報はどれか。",
+    answer: "MACアドレス",
+    choices: ["IPアドレス", "ポート番号", "ESSID", "MACアドレス"],
+    explanation: "MACアドレスはMedia Access Control addressの略で、主にデータリンク層でネットワークインタフェースを識別する。IPアドレスは経路制御に使われる。"
+  },
+  {
+    id: "add-20260802-dns",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "Webサイトのドメイン名と、通信に使う数値の宛先情報を対応付けて名前解決する仕組みはどれか。",
+    answer: "DNS",
+    choices: ["DNS", "DHCP", "NAT", "NTP"],
+    explanation: "DNSはDomain Name Systemの略。ドメイン名からIPアドレスを調べるなど、名前と宛先情報を対応付ける。"
+  },
+  {
+    id: "add-20260802-ipv6",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "128ビットのアドレス空間を持ち、従来方式のアドレス不足を解消するために普及しているインターネットプロトコルはどれか。",
+    answer: "IPv6",
+    choices: ["IPv4", "IPv6", "TCP", "UDP"],
+    explanation: "IPv6はInternet Protocol Version 6の略で、128ビットの広大なアドレス空間を持つ。IPv4のアドレスは32ビットである。"
+  },
+  {
+    id: "add-20260802-global-ip-address",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "インターネット上で通信相手を一意に識別できるよう割り当てられ、外部との通信に用いるアドレスはどれか。",
+    answer: "グローバルIPアドレス",
+    choices: ["プライベートIPアドレス", "MACアドレス", "グローバルIPアドレス", "ループバックアドレス"],
+    explanation: "グローバルIPアドレスはインターネット上で重複しないように管理される。プライベートIPアドレスは組織や家庭の内部で利用する。"
+  },
+  {
+    id: "add-20260802-private-ip-address",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "家庭や組織の内部ネットワークで自由に使え、同じ値が別の組織でも使われ得るアドレスはどれか。",
+    answer: "プライベートIPアドレス",
+    choices: ["グローバルIPアドレス", "MACアドレス", "マルチキャストアドレス", "プライベートIPアドレス"],
+    explanation: "プライベートIPアドレスは内部ネットワーク用で、そのままでは通常インターネットへ直接経路制御されない。外部通信ではNATなどを使う。"
+  },
+  {
+    id: "add-20260802-nat",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "内部ネットワーク用のアドレスとインターネット用のアドレスを変換し、端末が外部と通信できるようにする技術はどれか。",
+    answer: "NAT",
+    choices: ["NAT", "DHCP", "DNS", "VPN"],
+    explanation: "NATはNetwork Address Translation（ネットワークアドレス変換）の略。内部のプライベートIPアドレスと外部のグローバルIPアドレスを変換する。"
+  },
+  {
+    id: "add-20260802-dhcp",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "ネットワークへ接続した端末へ、利用するアドレスやゲートウェイなどの設定を自動配布するプロトコルはどれか。",
+    answer: "DHCP",
+    choices: ["DNS", "DHCP", "NAT", "SMTP"],
+    explanation: "DHCPはDynamic Host Configuration Protocolの略。端末へIPアドレスなどの通信設定を自動的に割り当てる。NATはアドレスを変換する技術である。"
+  },
+  {
+    id: "add-20260802-cc",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "電子メールで、主な宛先以外の関係者にも内容を共有し、その受信者のアドレスを全員に見える形で送る指定はどれか。",
+    answer: "Cc",
+    choices: ["To", "Bcc", "Cc", "Reply-To"],
+    explanation: "CcはCarbon Copyの略。参考として送る相手を指定し、そのアドレスは他の受信者にも表示される。Bccは指定した宛先を他の受信者から隠す。"
+  },
+  {
+    id: "add-20260802-bcc",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "電子メールで、指定した受信者のアドレスをほかの受信者に知らせずに同じ内容を送る指定はどれか。",
+    answer: "Bcc",
+    choices: ["To", "Cc", "Reply-To", "Bcc"],
+    explanation: "BccはBlind Carbon Copyの略。Bcc欄の宛先はほかの受信者から見えない。Cc欄の宛先は表示される。"
+  },
+  {
+    id: "add-20260802-rss",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "Webサイトの新着記事の見出しや要約を決まった形式で配信し、登録した利用者がまとめて確認できる仕組みはどれか。",
+    answer: "RSS",
+    choices: ["RSS", "Cookie", "SMTP", "MIME"],
+    explanation: "RSSはReally Simple Syndicationの略として知られる、Webサイトの更新情報を配信する形式。RSSリーダーで新着情報をまとめて確認できる。"
+  },
+  {
+    id: "add-20260802-cookie",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "Webサイトがログイン状態や設定などを識別するため、ブラウザ側へ保存させて次回の通信で送り返させる小さなデータはどれか。",
+    answer: "Cookie",
+    choices: ["キャッシュ", "Cookie", "セッションID", "RSS"],
+    explanation: "CookieはWebサーバがブラウザへ保存を依頼する小さなデータ。状態の維持などに使うが、キャッシュのように表示データそのものを一時保存する仕組みではない。"
+  },
+  {
+    id: "add-20260802-mvno",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "自社で携帯電話の無線設備を持たず、他社の回線を借りて独自の料金やブランドで通信サービスを提供する事業者はどれか。",
+    answer: "MVNO",
+    choices: ["MNO", "ISP", "MVNO", "ASP"],
+    explanation: "MVNOはMobile Virtual Network Operator（仮想移動体通信事業者）の略。MNOの無線通信設備を借りてサービスを提供する。"
+  },
+  {
+    id: "add-20260802-ftth",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "通信事業者の設備から利用者宅まで光ファイバを引き込み、高速な固定通信を提供する方式はどれか。",
+    answer: "FTTH",
+    choices: ["ADSL", "CATV", "PLC", "FTTH"],
+    explanation: "FTTHはFiber To The Home（家庭までの光ファイバ）の略。光ファイバを利用者宅まで敷設する。"
+  },
+  {
+    id: "add-20260802-voip",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "音声をデジタルデータに変換し、インターネット技術を使うネットワーク上で送受信する仕組みはどれか。",
+    answer: "VoIP",
+    choices: ["VoIP", "FTTH", "PLC", "NFC"],
+    explanation: "VoIPはVoice over Internet Protocolの略。音声をIPパケットとして送る技術で、IP電話などに使われる。"
+  },
+  {
+    id: "add-20260802-platinum-band",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "携帯電話で、比較的低い周波数のため建物の陰や屋内にも電波が届きやすいとされる周波数帯の通称はどれか。",
+    answer: "プラチナバンド",
+    choices: ["ミリ波", "プラチナバンド", "赤外線", "キャリアアグリゲーション"],
+    explanation: "プラチナバンドは主に700～900MHz付近の周波数帯の通称。回折しやすく、障害物の影響を受けにくい特性がある。"
+  },
+  {
+    id: "add-20260802-ble",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "センサーやビーコンなどで使われる、近距離向けで消費電力を抑えたBluetoothの通信方式はどれか。",
+    answer: "BLE",
+    choices: ["NFC", "LPWA", "BLE", "Wi-Fi"],
+    explanation: "BLEはBluetooth Low Energyの略。近距離・低消費電力の通信に向き、センサーやウェアラブル端末などで使われる。"
+  },
+  {
+    id: "add-20260802-lpwa",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "小さなセンサーデータを、低消費電力で長距離へ送るIoT用途に適した無線通信の総称はどれか。",
+    answer: "LPWA",
+    choices: ["BLE", "Wi-Fi", "NFC", "LPWA"],
+    explanation: "LPWAはLow Power Wide Areaの略。低速・小容量の通信を低消費電力かつ広い範囲で行う用途に向く。"
+  },
+  {
+    id: "add-20260802-multihop",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "無線センサー同士が中継役となり、データを複数の機器経由で目的地まで段階的に届ける方式はどれか。",
+    answer: "マルチホップ",
+    choices: ["マルチホップ", "ブロードキャスト", "ローミング", "ハンドオーバー"],
+    explanation: "マルチホップは複数の中継点を順に経由して通信する方式。直接届かない距離を補い、メッシュ型のIoTネットワークなどで使われる。"
+  },
+  {
+    id: "add-20260802-edge-computing",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "ネットワーク・通信",
+    question: "IoT機器が生むデータを遠隔のクラウドだけに送らず、機器や利用場所に近い側で処理して遅延や通信量を減らす考え方はどれか。",
+    answer: "エッジコンピューティング",
+    choices: ["クラウドコンピューティング", "エッジコンピューティング", "グリッドコンピューティング", "バッチ処理"],
+    explanation: "エッジコンピューティングはデータ発生源の近くで処理する方式。クラウドへの通信量や応答遅延を減らせる。"
+  },
+  {
+    id: "add-20260802-cracking",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "脅威・攻撃・マルウェア",
+    question: "悪意を持って他人のコンピュータへ侵入したり、データの破壊や改ざんを行ったりする行為はどれか。",
+    answer: "クラッキング",
+    choices: ["クラッキング", "デバッグ", "ペネトレーションテスト", "ベンチマーク"],
+    explanation: "クラッキングは悪意ある不正侵入や破壊・改ざんなどの行為。許可を得て弱点を調べるペネトレーションテストとは異なる。"
+  },
+  {
+    id: "add-20260802-social-engineering",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "脅威・攻撃・マルウェア",
+    question: "システムの技術的な弱点ではなく、人の心理的な隙や行動を利用して秘密情報を入手する手口の総称はどれか。",
+    answer: "ソーシャルエンジニアリング",
+    choices: ["フィッシング", "ソーシャルエンジニアリング", "バッファオーバーフロー攻撃", "DoS攻撃"],
+    explanation: "ソーシャルエンジニアリングは、人をだます、のぞき見る、捨てた資料を探るなどして情報を得る手口の総称。"
+  },
+  {
+    id: "add-20260802-shoulder-hacking",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "脅威・攻撃・マルウェア",
+    question: "利用者の背後などから画面やキー入力を盗み見て、暗証番号やパスワードを得る手口はどれか。",
+    answer: "ショルダーハッキング",
+    choices: ["トラッシング", "盗聴", "ショルダーハッキング", "スパイウェア"],
+    explanation: "ショルダーハッキングは肩越しなどに画面や手元を盗み見る手口。トラッシングは廃棄物から情報を探す手口である。"
+  },
+  {
+    id: "add-20260802-trashing",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "脅威・攻撃・マルウェア",
+    question: "ごみ箱に捨てられた書類や記憶媒体を調べ、機密情報や認証情報を入手する手口はどれか。",
+    answer: "トラッシング",
+    choices: ["ショルダーハッキング", "フィッシング", "スキミング", "トラッシング"],
+    explanation: "トラッシングは廃棄物から情報を不正に得る手口。書類の裁断や記憶媒体の適切な消去が対策となる。"
+  },
+  {
+    id: "add-20260802-dark-web",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "脅威・攻撃・マルウェア",
+    question: "一般の検索エンジンでは見つけにくく、専用ソフトなど特別な方法で接続する匿名性の高いWeb領域はどれか。",
+    answer: "ダークウェブ",
+    choices: ["ダークウェブ", "イントラネット", "ディープリンク", "ポータルサイト"],
+    explanation: "ダークウェブは一般的な検索エンジンに現れず、特別な接続手段を必要とするWeb領域。違法な情報取引などに悪用されることがある。"
+  },
+  {
+    id: "add-20260802-malware",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "脅威・攻撃・マルウェア",
+    question: "コンピュータや利用者へ害を与える目的で作られた、ウイルス・ワーム・スパイウェアなどの悪意あるソフトウェアの総称はどれか。",
+    answer: "マルウェア",
+    choices: ["ファームウェア", "マルウェア", "ミドルウェア", "シェアウェア"],
+    explanation: "マルウェアはmalicious softwareに由来する総称。ウイルス、ワーム、トロイの木馬、スパイウェアなどを含む。"
+  },
+  {
+    id: "add-20260802-trojan-horse",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "脅威・攻撃・マルウェア",
+    question: "便利なソフトなどを装って利用者に実行させ、内部で情報窃取や不正操作を行う悪意あるプログラムはどれか。",
+    answer: "トロイの木馬",
+    choices: ["ワーム", "ランサムウェア", "トロイの木馬", "アドウェア"],
+    explanation: "トロイの木馬は有用なプログラムを装って侵入し、実行後に悪意ある動作をする。自ら複製して広がるワームとは性質が異なる。"
+  },
+  {
+    id: "add-20260802-rat",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "脅威・攻撃・マルウェア",
+    question: "感染した端末を攻撃者が遠隔操作し、ファイル取得やカメラ操作などを行えるようにする不正プログラムはどれか。",
+    answer: "RAT",
+    choices: ["RAT", "WAF", "IDS", "Cookie"],
+    explanation: "RATはRemote Access Trojanの略。端末へ潜伏し、攻撃者による遠隔操作を可能にする種類のマルウェアである。"
+  },
+  {
+    id: "add-20260802-backdoor",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "脅威・攻撃・マルウェア",
+    question: "正規の認証や手順を通らずにシステムへ再侵入できるよう、攻撃者がひそかに設ける入口はどれか。",
+    answer: "バックドア",
+    choices: ["ゼロデイ攻撃", "バックドア", "ファイアウォール", "サンドボックス"],
+    explanation: "バックドアは正規のアクセス制御を回避する秘密の入口。RATなどのマルウェアによって作られる場合もある。"
+  },
+  {
+    id: "add-20260802-autorun",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "脅威・攻撃・マルウェア",
+    question: "USBメモリなどを接続した際に、媒体内の指定プログラムを自動的に起動する仕組みはどれか。",
+    answer: "オートラン",
+    choices: ["プラグアンドプレイ", "自動更新", "オートラン", "セキュアブート"],
+    explanation: "オートランは外部媒体などの接続時にプログラムを自動実行する仕組み。利便性がある一方、マルウェア拡散に悪用されることがある。"
+  },
+  {
+    id: "add-20260802-dos-attack",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "脅威・攻撃・マルウェア",
+    question: "一台の攻撃元から大量の要求を送り付けるなどしてサーバの資源を使い切らせ、正規利用者へサービスを提供できなくする攻撃はどれか。",
+    answer: "DoS攻撃",
+    choices: ["SQLインジェクション", "DDoS攻撃", "ゼロデイ攻撃", "DoS攻撃"],
+    explanation: "DoS攻撃はDenial of Service（サービス妨害）攻撃の略。多数の端末から分散して行うものはDDoS攻撃と呼ぶ。"
+  },
+  {
+    id: "add-20260802-zero-day-attack",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "脅威・攻撃・マルウェア",
+    question: "脆弱性が発見されてから修正プログラムが提供されるまでの対策が整っていない時期を狙う攻撃はどれか。",
+    answer: "ゼロデイ攻撃",
+    choices: ["ゼロデイ攻撃", "DoS攻撃", "総当たり攻撃", "中間者攻撃"],
+    explanation: "ゼロデイ攻撃は、脆弱性への修正が提供される前など、防御が難しい段階を狙う攻撃。既知の脆弱性だけを指すものではない。"
+  },
+  {
+    id: "add-20260802-xss",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "脅威・攻撃・マルウェア",
+    question: "掲示板などへ悪意あるスクリプトを埋め込み、そのページを見た利用者のブラウザで実行させる攻撃はどれか。",
+    answer: "クロスサイトスクリプティング",
+    choices: ["SQLインジェクション", "クロスサイトスクリプティング", "バッファオーバーフロー攻撃", "ディレクトリトラバーサル"],
+    explanation: "クロスサイトスクリプティングは、Webページへ不正なスクリプトを混入させ利用者のブラウザで実行させる。SQLインジェクションはDBへの命令を不正に組み立てる攻撃である。"
+  },
+  {
+    id: "add-20260802-buffer-overflow",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "脅威・攻撃・マルウェア",
+    question: "プログラムが確保した記憶領域を超えるデータを送り、隣接領域を書き換えて異常動作や不正コード実行を狙う攻撃はどれか。",
+    answer: "バッファオーバーフロー攻撃",
+    choices: ["クロスサイトスクリプティング", "DoS攻撃", "バッファオーバーフロー攻撃", "フィッシング"],
+    explanation: "バッファオーバーフロー攻撃は、入力領域の境界を越えてメモリを書き換える脆弱性を悪用する。Webページ上のスクリプトを悪用する攻撃とは異なる。"
+  },
+  {
+    id: "add-20260802-spyware",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "脅威・攻撃・マルウェア",
+    question: "利用者に気付かれないよう操作履歴や個人情報などを収集し、外部へ送信するソフトウェアはどれか。",
+    answer: "スパイウェア",
+    choices: ["アドウェア", "ランサムウェア", "キーロガー", "スパイウェア"],
+    explanation: "スパイウェアは利用者の情報や行動をひそかに収集するマルウェア。キーロガーはキー入力を記録する仕組みで、スパイウェアの機能として使われることがある。"
+  },
+  {
+    id: "add-20260802-risk-process",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "リスク管理・情報セキュリティ",
+    question: "情報セキュリティのリスクマネジメントを進めるときの、最初から最後までの正しい順序はどれか。",
+    answer: "リスク特定→リスク分析→リスク評価→リスク対応",
+    choices: ["リスク特定→リスク分析→リスク評価→リスク対応", "リスク分析→リスク特定→リスク対応→リスク評価", "リスク評価→リスク特定→リスク分析→リスク対応", "リスク対応→リスク分析→リスク特定→リスク評価"],
+    explanation: "まずリスクを特定し、発生可能性と影響を分析し、基準に照らして評価した後、適切な対応を選ぶ。特定・分析・評価をまとめてリスクアセスメントという。"
+  },
+  {
+    id: "add-20260802-risk-avoidance",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "リスク管理・情報セキュリティ",
+    question: "危険性が高い新サービスの提供そのものを中止し、原因となる活動を行わないようにする対応はどれか。",
+    answer: "リスク回避",
+    choices: ["リスク低減", "リスク回避", "リスク共有", "リスク保有"],
+    explanation: "リスク回避は、原因となる活動をやめてリスクをなくす対応。対策で発生確率や影響を下げるのはリスク低減である。"
+  },
+  {
+    id: "add-20260802-risk-reduction",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "リスク管理・情報セキュリティ",
+    question: "アクセス制御やバックアップを導入し、事故の発生可能性または被害の大きさを小さくする対応はどれか。",
+    answer: "リスク低減",
+    choices: ["リスク回避", "リスク共有", "リスク低減", "リスク保有"],
+    explanation: "リスク低減は管理策によって発生可能性や影響を下げる対応。活動を中止する回避、保険などで分担する共有とは異なる。"
+  },
+  {
+    id: "add-20260802-risk-sharing",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "リスク管理・情報セキュリティ",
+    question: "サイバー保険への加入や契約による責任分担によって、損失の負担を他者と分ける対応はどれか。",
+    answer: "リスク共有",
+    choices: ["リスク回避", "リスク低減", "リスク保有", "リスク共有"],
+    explanation: "リスク共有は、保険や契約、分散などでリスクを他者と分担する対応。単に何もせず受け入れるリスク保有とは異なる。"
+  },
+  {
+    id: "add-20260802-risk-retention",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "リスク管理・情報セキュリティ",
+    question: "対策費用と想定損失を比較した結果、小さな損失の可能性を理解したうえで自組織が受け入れる対応はどれか。",
+    answer: "リスク保有",
+    choices: ["リスク保有", "リスク回避", "リスク低減", "リスク共有"],
+    explanation: "リスク保有は、判断したうえでリスクを自ら受け入れる対応。残留リスクを受容する場合などが該当する。"
+  },
+  {
+    id: "add-20260802-isms",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "リスク管理・情報セキュリティ",
+    question: "組織が情報セキュリティ方針を定め、リスクに応じた管理策を運用し、継続的に改善する仕組みはどれか。",
+    answer: "ISMS",
+    choices: ["BCMS", "ISMS", "SLM", "ITIL"],
+    explanation: "ISMSはInformation Security Management System（情報セキュリティマネジメントシステム）の略。方針・リスク対応・運用・改善を組織的に行う。"
+  },
+  {
+    id: "add-20260802-security-policy",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "リスク管理・情報セキュリティ",
+    question: "組織が情報資産を守るための基本方針、対策基準、実施手順などを体系的に定めた規程はどれか。",
+    answer: "情報セキュリティポリシー",
+    choices: ["プライバシーポリシー", "事業継続計画", "情報セキュリティポリシー", "サービスレベル合意書"],
+    explanation: "情報セキュリティポリシーは、組織の情報セキュリティに関する方針やルールを体系化したもの。個人情報だけでなく情報資産全体を対象とする。"
+  },
+  {
+    id: "add-20260802-confidentiality",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "リスク管理・情報セキュリティ",
+    question: "許可された人だけが情報へアクセスでき、権限のない人には開示されない性質はどれか。",
+    answer: "機密性",
+    choices: ["真正性", "完全性", "可用性", "機密性"],
+    explanation: "機密性は認可された人だけが情報へアクセスできる性質。完全性は正確さ、可用性は必要なときに利用できる性質で、三つをCIAという。"
+  },
+  {
+    id: "add-20260802-integrity",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "リスク管理・情報セキュリティ",
+    question: "情報が正確で完全な状態に保たれ、許可なく改ざんや削除をされていない性質はどれか。",
+    answer: "完全性",
+    choices: ["完全性", "機密性", "可用性", "真正性"],
+    explanation: "完全性は情報の正確さと完全さが保たれる性質。機密性は秘密を守ること、可用性は必要時に使えることである。"
+  },
+  {
+    id: "add-20260802-availability",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "リスク管理・情報セキュリティ",
+    question: "許可された利用者が必要なときに、情報やシステムを支障なく利用できる性質はどれか。",
+    answer: "可用性",
+    choices: ["機密性", "可用性", "完全性", "責任追跡性"],
+    explanation: "可用性は必要なときに情報やシステムを利用できる性質。冗長化やバックアップ、障害対策が向上に役立つ。"
+  },
+  {
+    id: "add-20260802-symmetric-key-cryptography",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "暗号化と復号に同じ秘密の鍵を使い、事前に通信相手と安全に鍵を共有する必要がある方式はどれか。",
+    answer: "共通鍵暗号方式",
+    choices: ["公開鍵暗号方式", "ハッシュ関数", "共通鍵暗号方式", "デジタル署名"],
+    explanation: "共通鍵暗号方式は暗号化と復号に同じ鍵を使う。高速だが鍵配送が課題。公開鍵暗号方式は異なる鍵の組を使う。"
+  },
+  {
+    id: "add-20260802-plaintext",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "暗号化される前、または復号された後の、人が内容を読める元のデータはどれか。",
+    answer: "平文",
+    choices: ["暗号文", "ハッシュ値", "署名値", "平文"],
+    explanation: "平文は暗号化前の元データ。暗号化によって内容を読みにくくしたものが暗号文である。"
+  },
+  {
+    id: "add-20260802-ca",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "公開鍵証明書を発行し、その公開鍵が申請者本人や正しい組織のものだと保証する機関はどれか。",
+    answer: "CA",
+    choices: ["CA", "CSIRT", "ISP", "WAF"],
+    explanation: "CAはCertification Authority（認証局）の略。本人確認を行い、公開鍵と所有者を結び付けるデジタル証明書を発行する。"
+  },
+  {
+    id: "add-20260802-pki",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "認証局、公開鍵証明書、失効情報などを用いて、公開鍵の信頼性を社会的に支える仕組みはどれか。",
+    answer: "PKI",
+    choices: ["SSL/TLS", "PKI", "VPN", "ISMS"],
+    explanation: "PKIはPublic Key Infrastructure（公開鍵基盤）の略。CAやデジタル証明書などを用いて公開鍵を信頼できる形で運用する。"
+  },
+  {
+    id: "add-20260802-biometric-authentication",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "指紋、顔、虹彩、静脈、声紋など、人の身体的・行動的特徴を使って本人を確認する方式はどれか。",
+    answer: "バイオメトリクス認証",
+    choices: ["知識認証", "所有物認証", "バイオメトリクス認証", "リスクベース認証"],
+    explanation: "バイオメトリクス認証は生体認証ともいい、人固有の特徴で本人確認する。パスワードは知識、ICカードは所有物による認証である。"
+  },
+  {
+    id: "add-20260802-waf",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "WebアプリケーションへのHTTP通信内容を検査し、SQLインジェクションなどの攻撃を防ぐ仕組みはどれか。",
+    answer: "WAF",
+    choices: ["ファイアウォール", "IDS", "IPS", "WAF"],
+    explanation: "WAFはWeb Application Firewallの略で、Webアプリへの通信内容を検査する。通常のファイアウォールは主にIPアドレスやポートなどで通信を制御する。"
+  },
+  {
+    id: "add-20260802-ssl-tls",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "Web通信などで、相手の認証と通信内容の暗号化、改ざん検知に利用されるプロトコルはどれか。",
+    answer: "SSL/TLS",
+    choices: ["SSL/TLS", "SMTP", "DNS", "DHCP"],
+    explanation: "SSL/TLSはSecure Sockets Layer／Transport Layer Securityの略。現在は後継のTLSが中心で、HTTPSなどの安全な通信に使われる。"
+  },
+  {
+    id: "add-20260802-wpa2",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "無線ネットワークの通信を暗号化して保護する規格で、WEPより強固な方式はどれか。",
+    answer: "WPA2",
+    choices: ["WEP", "WPA2", "ESSIDステルス", "MACアドレスフィルタリング"],
+    explanation: "WPA2はWi-Fi Protected Access 2の略で、無線LANを暗号化する規格。ネットワーク名を隠す設定だけより強い保護を提供する。"
+  },
+  {
+    id: "add-20260802-two-factor-authentication",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "パスワードとスマートフォンのように、知識・所有物・生体情報のうち異なる二種類の要素を組み合わせる認証はどれか。",
+    answer: "2要素認証",
+    choices: ["二段階認証", "シングルサインオン", "2要素認証", "パスワードレス認証"],
+    explanation: "2要素認証は異なる二種類の認証要素を使う。同じ種類の確認を二回行う二段階認証とは、必ずしも同じ意味ではない。"
+  },
+  {
+    id: "add-20260802-ids",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "ネットワークや端末を監視し、不正な通信や侵入の兆候を見つけて管理者へ通知するシステムはどれか。",
+    answer: "IDS",
+    choices: ["IPS", "WAF", "ファイアウォール", "IDS"],
+    explanation: "IDSはIntrusion Detection System（侵入検知システム）の略で、攻撃を検知して通知する。IPSは検知に加えて通信の遮断も行う。"
+  },
+  {
+    id: "add-20260802-ips",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "不正な通信や侵入の兆候を検知し、その通信を自動的に遮断して被害を防ぐシステムはどれか。",
+    answer: "IPS",
+    choices: ["IPS", "IDS", "WAF", "SIEM"],
+    explanation: "IPSはIntrusion Prevention System（侵入防止システム）の略。IDSの検知・通知に対し、IPSは通信を遮断する防止機能を持つ。"
+  },
+  {
+    id: "add-20260802-dmz",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "公開Webサーバなどを置くため、インターネットと社内ネットワークの間に設けて双方から分離する中間領域はどれか。",
+    answer: "DMZ",
+    choices: ["VPN", "DMZ", "VLAN", "SAN"],
+    explanation: "DMZはDeMilitarized Zone（非武装地帯）の略。公開サーバを社内ネットワークから隔離し、侵入時の影響を抑える。"
+  },
+  {
+    id: "add-20260802-https",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "Webブラウザとサーバの通信をTLSで暗号化し、URLが通常「https://」で始まるプロトコルはどれか。",
+    answer: "HTTPS",
+    choices: ["HTTP", "FTPS", "HTTPS", "SSH"],
+    explanation: "HTTPSはHypertext Transfer Protocol Secureの略で、HTTP通信をTLSで保護する。盗聴や改ざん、なりすましへの対策に役立つ。"
+  },
+  {
+    id: "add-20260802-vpn",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "公衆ネットワーク上に暗号化された仮想的な専用経路を作り、離れた拠点や端末を安全に接続する技術はどれか。",
+    answer: "VPN",
+    choices: ["WAN", "VLAN", "DMZ", "VPN"],
+    explanation: "VPNはVirtual Private Network（仮想私設網）の略。インターネットなどを使いながら、暗号化されたトンネルで安全な通信経路を作る。"
+  },
+  {
+    id: "add-20260802-penetration-test",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "組織の許可の下で実際の攻撃手法を試し、システムへ侵入できる弱点がないか確認するテストはどれか。",
+    answer: "ペネトレーションテスト",
+    choices: ["ペネトレーションテスト", "単体テスト", "運用テスト", "負荷テスト"],
+    explanation: "ペネトレーションテストは侵入テストともいい、許可された範囲で攻撃を模擬して脆弱性や侵入経路を確かめる。悪意あるクラッキングとは異なる。"
+  },
+  {
+    id: "add-20260802-single-sign-on",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "一度の利用者認証で、連携する複数のシステムやサービスを利用できるようにする仕組みはどれか。",
+    answer: "シングルサインオン",
+    choices: ["多要素認証", "シングルサインオン", "ワンタイムパスワード", "アクセス制御"],
+    explanation: "シングルサインオンは一回の認証で複数サービスを利用できる仕組み。認証回数を減らすもので、認証要素を増やす多要素認証とは別の考え方である。"
+  },
+  {
+    id: "add-20260802-security-by-design",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "システムの企画・設計段階から安全性を要件へ組み込み、開発と運用の全体で対策する考え方はどれか。",
+    answer: "セキュリティバイデザイン",
+    choices: ["プライバシーバイデザイン", "フェールセーフ", "セキュリティバイデザイン", "フールプルーフ"],
+    explanation: "セキュリティバイデザインは、後付けではなく企画・設計の初期段階から安全性を作り込む考え方。"
+  },
+  {
+    id: "add-20260802-secure-boot",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "コンピュータ起動時に読み込むソフトウェアの署名を検証し、信頼できないプログラムの実行を防ぐ仕組みはどれか。",
+    answer: "セキュアブート",
+    choices: ["BIOS更新", "オートラン", "TPM", "セキュアブート"],
+    explanation: "セキュアブートは起動時のソフトウェアが正しく署名されているかを確認し、不正なブートローダなどの実行を防ぐ。"
+  },
+  {
+    id: "add-20260802-blockchain",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "取引記録をまとめたブロックを暗号技術で鎖のようにつなぎ、多数の参加者で共有して改ざんを難しくする仕組みはどれか。",
+    answer: "ブロックチェーン",
+    choices: ["データウェアハウス", "分散処理", "公開鍵基盤", "ブロックチェーン"],
+    explanation: "ブロックチェーンは、記録のまとまりを前の記録と暗号学的に結び付け、分散して共有する台帳技術。変更の検出と耐改ざん性を高める。"
+  },
+  {
+    id: "add-20260802-clear-screen",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "離席時に画面をロックし、機密情報を表示したままにしないよう徹底する物理的・人的な対策はどれか。",
+    answer: "クリアスクリーン",
+    choices: ["クリアデスク", "スクリーンセーバー", "覗き見防止フィルタ", "クリアスクリーン"],
+    explanation: "クリアスクリーンは離席時に画面をロックし、表示情報を他人に見られないようにする。クリアデスクは机上へ機密資料を放置しない対策である。"
+  },
+  {
+    id: "add-20260802-anti-passback",
+    batchId: "addition-2026-08-02-ch13-15",
+    category: "暗号・認証・セキュリティ対策",
+    question: "入室記録のある人でなければ退室できないなど、入退室の順序を照合して一枚のICカードの使い回しを防ぐ仕組みはどれか。",
+    answer: "アンチパスバック",
+    choices: ["インターロック", "共連れ防止", "アンチパスバック", "シングルサインオン"],
+    explanation: "アンチパスバックは入室と退室の履歴を対応させ、同じ認証媒体を複数人が使い回す不正を防ぐ。二つの扉を同時に開けないインターロックとは異なる。"
   }
 ];
